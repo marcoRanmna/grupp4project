@@ -1,0 +1,12 @@
+Daily standup 2022-01-17 09:00
+Present during stand-up meeting: Oscar, Alexander, Emma.
+* Ideas for what we would like for our health-website-app idea
+- Hide things on the website that isn't relevant to us (for example hide calories if it's not relevant to the specific user)
+- Maybe use google fit API(REST) specifically for android and bluetooth devices
+- Calender view on website
+- Option to add things manually on website
+
+* Until next time:
+- Emma: research how useful google fit API might be for this project
+- Oscar: Calender research
+- Alexander: Calories and food research
