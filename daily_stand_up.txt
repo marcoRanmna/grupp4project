@@ -10,3 +10,4 @@ Present during stand-up meeting: Oscar, Alexander, Emma.
 - Emma: research how useful google fit API might be for this project
 - Oscar: Calender research
 - Alexander: Calories and food research
+- Marco: MongoDB Collections
