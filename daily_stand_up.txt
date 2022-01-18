@@ -11,3 +11,18 @@ Present during stand-up meeting: Oscar, Alexander, Emma.
 - Oscar: Calender research
 - Alexander: Calories and food research
 - Marco: MongoDB Collections
+
+
+2022-01-18 09:00
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar 
+*Presented our work
+- Mongo collections, what info we need
+- What we need if we want to use api, what info can we get from the api
+- What type of calendar we could use
+- List with food and what nutrients it has
+
+*Until next time:
+- Emma: Continue research and test api
+- Oscar: Test implementing calendar
+- Alexander: Visualize data
+- Marco: Match collections with fitness apps
