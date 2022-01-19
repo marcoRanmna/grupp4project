@@ -26,3 +26,17 @@ Present during stand-up meeting: Marco, Emma, Alexander, Oscar
 - Oscar: Test implementing calendar
 - Alexander: Visualize data
 - Marco: Match collections with fitness apps
+
+2022-01-19 13:00
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Alexander: Shared how data can be presented on website
+- Emma: Oauth login for website to try and get info from API for specific google-users that have account on website
+- Marco: checked addition collections that should be included
+- Oscar: Shared new calendar that looks more like what we want
+
+*Until next time:
+- Emma: Send screenshots of health-apps on discord.
+- Oscar: send screenshots of health-apps on discord. continue with calendar and potentially add things to it
+- Alexander: Continue working on the two issues that I'm assigned, send screenshots of health apps on discord
+- Marco: send screenshots of health-apps on discord.
