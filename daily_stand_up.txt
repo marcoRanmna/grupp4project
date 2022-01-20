@@ -40,3 +40,17 @@ Present during stand-up meeting: Marco, Emma, Alexander, Oscar
 - Oscar: send screenshots of health-apps on discord. continue with calendar and potentially add things to it
 - Alexander: Continue working on the two issues that I'm assigned, send screenshots of health apps on discord
 - Marco: send screenshots of health-apps on discord.
+
+2022-01-20 09:00
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Marco: Looked at our different fitness apps took the info we might need to have on our site
+- Emma: Shared info about the health-apps
+- Oscar: Created events in calendar manually
+- Alexander: Shared how we can use the data we get from different foods
+
+*Until next time:
+- Marco: Connection between database and calendar
+- Emma: Look at the design for the website
+- Oscar: Connection between database and calendar
+- Alexander: Search for data, choose measurements
