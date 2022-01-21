@@ -54,3 +54,16 @@ Present during stand-up meeting: Marco, Emma, Alexander, Oscar
 - Emma: Look at the design for the website
 - Oscar: Connection between database and calendar
 - Alexander: Search for data, choose measurements
+
+2022-01-21 13:02
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Marco and Oscar tried to connect calendar with database. Ran into issues. Going to ask Joakim for help
+- Alexander: Calculate calories in grams instead of cups and ounces etc.
+- Emma: Shown the draft of various sections of the website could look like.
+
+*Until next time:
+- Marco: Add stuff to backlog
+- Emma: Add stuff to backlog
+- Oscar: Add stuff to backlog
+- Alexander: Add stuff to backlog
