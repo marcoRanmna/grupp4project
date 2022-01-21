@@ -1,1 +1,5 @@
 Sprint retrospective 2022-01-21
+Present during meeting: Marco, Emma, Alexander, Oscar
+* Where all issues finished: Yes and no, at the start of the sprint we did not specify if or which issues that would be finished, need better planing for next sprint
+* For next sprint: Need better structure, especially more focus on backlog, but we all agree that we are on the same track with how we want the project to look like, a bit more focus on time management
+* New things for backlog: Darkmode, parameters for user. More will come
