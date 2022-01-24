@@ -3,7 +3,7 @@
 
 {% block content %}
 <form method="POST">
-    <h3 align="center">Sign up</h3>
+    <h3>Sign up</h3>
     <div class="form-group">
         <label for="email">Email address</label>
         <input
@@ -30,8 +30,13 @@
                 type="password"
                 class="form-control"
                 id="password1"
+                oninput="verifyPassword()"
                 name="password1"
                 placeholder="Enter password">
+    </div>
+
+    <div class="info">
+        <span id="pwd-message"></span><br/>
     </div>
 
     <div class="form-group">
@@ -40,10 +45,44 @@
                 type="password"
                 class="form-control"
                 id="password2"
+                oninput="checkPassword()"
                 name="password2"
-                placeholder="Confirm password">
+                placeholder="Confirm password"
+                disabled/> <br/>
     </div>
     <br />
-    <button type="submit" class="btn btn-primary">Sign up</button>
+        <input type="submit" id="submit" value="Save" disabled/>
 </form>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        function checkPassword() {
+            let pwd1 = document.getElementById("password1");
+            let pwd2 = document.getElementById("password2");
+            document.getElementById("submit").disabled = pwd1.value !== pwd2.value;
+        }
+
+        function verifyPassword() {
+            let pwdInput = document.getElementById("password1");
+            let pwdMessage = document.getElementById("pwd-message");
+            let resultObj = CheckPassword(pwdInput.value);
+            pwdMessage.innerHTML = resultObj.message;
+            document.getElementById("password2").disabled = !resultObj.result;
+        }
+
+        function CheckPassword(inputtxt) {
+            let pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,1000}$/;
+            let obj = {}
+            if (inputtxt.match(pattern)) {
+                obj.result = true;
+                obj.message = "";
+            } else {
+                obj.result = false;
+                obj.message = "Password must be 6 characters long and contain at least 1 lower case letter, 1 upp case letter, 1 digit, and 1 special character."
+            }
+            return obj;
+        }
+
+    </script>
 {% endblock %}
