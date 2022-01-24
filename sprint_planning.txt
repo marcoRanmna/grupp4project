@@ -1,0 +1,6 @@
+Sprint planning meeting 2022-01-24 09:00
+Get databse setup and get started on website-part
+Name for sprint: Backend-shell and frontend-shell
+In sprintbacklog: Set up database, Sign in/sign up pages, Sync page, Sign out page,
+Profile prefs page, help page, Profile account-settings page, Main Page, Add data page
+
