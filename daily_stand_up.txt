@@ -67,3 +67,17 @@ Present during stand-up meeting: Marco, Emma, Alexander, Oscar
 - Emma: Add stuff to backlog
 - Oscar: Add stuff to backlog
 - Alexander: Add stuff to backlog
+
+2022-01-24 09:19
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Marco and Oscar: Talked to joakim and will set up a database first before connecting a calendar to it. Added cards
+to backlog.
+- Alexander: Added cards to backlog
+- Emma: Added cards to backlog
+
+*Until next time:
+- Marco: Work with Oscar on getting database set up
+- Emma: Sign in and sign up page
+- Oscar: Work with Marco on getting database set up
+- Alexander: Help page
