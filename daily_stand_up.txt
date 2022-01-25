@@ -81,3 +81,16 @@ to backlog.
 - Emma: Sign in and sign up page
 - Oscar: Work with Marco on getting database set up
 - Alexander: Help page
+
+2022-01-25 09:00
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Emma: Verification of passwords on sign-up page and removed some code for css on sign-in/up page. Finished sign-in/up pages.
+- Alexander: Finished with help page
+- Oscar and Marco: Setup database. Performed tests on database, everything worked.
+
+*Until next time:
+- Emma: Profile preferences page
+- Oscar: Add page for manual data entry
+- Alexander: Sign out page
+- Marco: Main page
