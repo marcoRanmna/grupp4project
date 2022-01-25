@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+<form method="post">
+<h3>Sign out page</h3>
+<p>Are you sure you want to sign out?</p>
+  <label class="btn btn-primary">
+  <input id="submit2" name="submit2" type="submit" value="Sign Out" onclick="validate()">
+  </label>
+</form>
+
+
+{% endblock %}
+
+{% block scripts %}
+    <script type=text/javascript>
+        function validate() {
+            var submitbutton = document.getElementById('submit2');
+            if (submitbutton.click) {
+                alert("Are you sure you want to sign out?");
+            }
+        }
+    </script>
+
+{% endblock %}
