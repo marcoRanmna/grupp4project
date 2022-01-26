@@ -1,43 +1,40 @@
-{% extends "base.html" %}
-{% block title %}Profile Preference{% endblock %}
-
 {% block content %}
     <title>Profile preferences</title><br/>
     <div data-role="content" data-theme="g"></div>
     <label class="switch">
         <div id="Step" data-role="fieldcontain">
             <label for="Step">Steps-tracking</label>
-            <input id="steps" name="steps" type="checkbox" onclick="validate()">
+            <input id="steps" name="steps" type="checkbox" onclick="validate(this)">
             <span class="slider round"></span><br/>
         </div>
         <div id="Sleep" data-role="fieldcontain">
             <label for="Sleep">Sleep-tracking</label>
-            <input id="sleeps" name="sleeps" type="checkbox" onclick="validate()">
+            <input id="sleeps" name="sleeps" type="checkbox" onclick="validate(this)">
             <span class="slider round"></span><br/>
         </div>
         <div id="Training" data-role="fieldcontain">
             <label for="Training">Training-tracking</label>
-            <input id="trainings" name="trainings" type="checkbox" onclick="validate()">
+            <input id="trainings" name="trainings" type="checkbox" onclick="validate(this)">
             <span class="slider round"></span><br/>
         </div>
         <div id="Calories" data-role="fieldcontain">
             <label for="Calories">Calories-tracking</label>
-            <input id="caloriess" name="caloriess" type="checkbox" onclick="validate()">
+            <input id="caloriess" name="caloriess" type="checkbox" onclick="validate(this)">
             <span class="slider round"></span><br/>
         </div>
         <div id="Pulse" data-role="fieldcontain">
             <label for="Pulse">Pulse-tracking</label>
-            <input id="pulses" name="pulses" type="checkbox" onclick="validate()">
+            <input id="pulses" name="pulses" type="checkbox" onclick="validate(this)">
             <span class="slider round"></span><br/>
         </div>
         <div id="SpO2" data-role="fieldcontain">
             <label for="SpO2">SpO2-tracking</label>
-            <input id="spo2s" name="spo2s" type="checkbox" onclick="validate()">
+            <input id="spo2s" name="spo2s" type="checkbox" onclick="validate(this)">
             <span class="slider round"></span><br/>
         </div>
         <div id="Stress" data-role="fieldcontain">
             <label for="Stress">Stress-tracking</label>
-            <input id="stresss" name="stresss" type="checkbox" onclick="validate()">
+            <input id="stresss" name="stresss" type="checkbox" onclick="validate(this)" >
             <span class="slider round"></span><br/>
         </div>
             <input type="submit" id="submit" value="Submit options"/>
@@ -48,36 +45,10 @@
 
 {% block scripts %}
     <script type=text/javascript>
-    function validate(){
-        let step = document.getElementById('steps');
-        let sleep = document.getElementById('sleeps');
-        let spo2 = document.getElementById('spo2s');
-        let training = document.getElementById('trainings');
-        let calories = document.getElementById('caloriess');
-        let stress = document.getElementById('stresss');
-        let pulse = document.getElementById('pulses')
-
-        if (step.checked){
-            alert("checked step tracking");
-        }
-        else if(sleep.checked){
-            alert("checked sleep tracking");
-        }
-        else if(spo2.checked){
-            alert("checked SpO2 tracking");
-        }
-        else if(training.checked){
-            alert("checked training tracking");
-        }
-        else if(calories.checked){
-            alert("checked calories tracking");
-        }
-        else if(stress.checked){
-            alert("checked stress tracking");
-        }
-        else if(pulse.checked){
-            alert("checked pulse tracking");
-        }
+    function validate(e) {
+      if (e.checked) {
+        alert(`Checked ${e.name} tracking`)
+      }
     }
     </script>
 {% endblock %}
