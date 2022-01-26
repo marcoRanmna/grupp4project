@@ -94,3 +94,16 @@ Present during stand-up meeting: Marco, Emma, Alexander, Oscar
 - Oscar: Add page for manual data entry
 - Alexander: Sign out page
 - Marco: Main page
+
+2022-01-26 11:35
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Emma: Preference page where you choose what you want to see, works but needs a bit more work to be what we want
+- Alexander: Working sign out page, pop out feature
+- Oscar: Working add data page
+- Marco: Working main page
+
+*Until next time:
+- Emma and Alexander: More work on profile preferences page
+- Oscar: Account settings page
+- Marco: Synchronize page
