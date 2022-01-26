@@ -8,9 +8,11 @@ def create_app():
     from .views import views
     from .auth import auth
     from .mainpage import main_page
+    from .synchronize import synchronize_page
 
     app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/")
     app.register_blueprint(main_page, url_perfix="/")
+    app.register_blueprint(synchronize_page, url_perfix="/")
 
     return app
