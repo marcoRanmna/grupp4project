@@ -33,8 +33,3 @@ def sign_up():
             flash("Account was created.", category="success")
 
     return render_template("sign_up.html")
-
-
-@auth.route("/add-data", methods=["GET", "POST"])
-def add_data():
-    return render_template("add_data.html")
