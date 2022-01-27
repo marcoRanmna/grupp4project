@@ -115,5 +115,8 @@ Present during stand-up meeting: Marco, Emma, Alexander, Oscar
 - Oscar: Finished account-settings page.
 - Marco: Finished sync-page
 
+We have added priority to cards now and added 3 prio 1 cards to our sprint backlog due to running out of cards.
 Until next time:
-do sprint-review and sprint-planning and add priority to cards.
+Emma: Css-files
+Marco & Oscar: Connect database to project
+Alexander: add navbar to all pages
