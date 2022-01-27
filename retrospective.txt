@@ -1,5 +1,12 @@
 Sprint retrospective 2022-01-21
 Present during meeting: Marco, Emma, Alexander, Oscar
-* Where all issues finished: Yes and no, at the start of the sprint we did not specify if or which issues that would be finished, need better planing for next sprint
+* Were all issues finished: Yes and no, at the start of the sprint we did not specify if or which issues that would be finished, need better planing for next sprint
 * For next sprint: Need better structure, especially more focus on backlog, but we all agree that we are on the same track with how we want the project to look like, a bit more focus on time management
-* New things for backlog: Darkmode, parameters for user. More will come
+* New things for backlog: Darkmode, parameters for user. More will come.
+
+Sprint retrospective 2022-01-27
+Present during meeting: Marco, Emma, Alexander, Oscar
+* Were all issues finished: yes and we need to have a gameplan for when we run out of cards in sprint-backlog and add priority to cards.
+* Plan better and use priority for when we need more cards from backlog because sprint-backlog is empty.
+* prio 1 = high priority prio 5 = low priority and use prio 2 for cards that require prio 1-cards completed before they can be done.
+* when sprint-backlog is empty pull cards from backlog to sprint-backlog based on priority.
