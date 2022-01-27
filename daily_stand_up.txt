@@ -107,3 +107,13 @@ Present during stand-up meeting: Marco, Emma, Alexander, Oscar
 - Emma and Alexander: More work on profile preferences page
 - Oscar: Account settings page
 - Marco: Synchronize page
+
+2022-01-27 09:00
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Emma & Alexander: Finished fixing the preferences.
+- Oscar: Finished account-settings page.
+- Marco: Finished sync-page
+
+Until next time:
+do sprint-review and sprint-planning and add priority to cards.
