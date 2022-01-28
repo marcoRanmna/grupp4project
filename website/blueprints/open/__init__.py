@@ -1,8 +1,5 @@
-import datetime
-
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from flask_login import login_user
-from website.controllers.user_controller import create_user, signin_user
+from website.controllers.user_controller import create_user
 
 bp_open = Blueprint("bp_open", __name__)
 
@@ -12,7 +9,7 @@ def login():
     return render_template("login.html")
 
 
-@bp_open.get("/sign-up")
+@bp_open.route("/sign-up", methods=["GET", "POST"])
 def signup_get():
     return render_template("sign_up.html")
 
@@ -42,20 +39,16 @@ def sign_up():
             flash("Password must be att at least 7 characters.", category="error")
             return render_template("sign_up.html")
         else:
-            flash("Account was created.", category="success")
             create_user(first_name, last_name, email, password1)
+            flash("Account was created.", category="success")
             return redirect(url_for("bp_open.login"))
 
 
-@bp_open.get('/login')
-def signin_get():
-    return render_template('login.html')
-
-
-@bp_open.post('/login')
-def signin_post():
-    email = request.form.get('email')
-    signin_user(email)
+# @bp_open.route('/login')
+# def signin_post():
+#     email = request.form.get('email')
+#     print('hello')
+#     signin_user(email)
     # password = request.form.get('password')
     # from website.persistence.models import User
     # user = User.find(email=email).first_or_none()
