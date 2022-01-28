@@ -120,3 +120,17 @@ Until next time:
 Emma: Css-files
 Marco & Oscar: Connect database to project
 Alexander: add navbar to all pages
+
+2022-01-28 14:15
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Marco & Oscar: Added most data to database, had some issues with password check.
+- Emma: Issues with flask and bootstrap
+- Alexander: Added navbar to all pages, forgot to add profile-pref to navbar
+
+Get rid of bootstrap and just run css
+*Until next time:
+- Emma: fix css without bootstrap
+- Marco & Oscar: Continue work with database
+- Alexander: Add profile-pref to navbar
+
