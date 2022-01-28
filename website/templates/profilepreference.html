@@ -15,7 +15,7 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
-        <title>{% block title %}Log in{% endblock %}</title>
+        <title>{% block title %}Profile preference{% endblock %}</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -37,7 +37,7 @@
                     <a class="nav-item nav-link" id="main" href="/main-page">Main page</a>
                     <a class="nav-item nav-link" id="accountSettings" href="/account-settings">Account Settings</a>
                     <a class="nav-item nav-link" id="synchronize" href="/synchronize-page">Synchronize page</a>
-                    <a class="nav-item nav-link" id="help" href="/help-page">Help</a>
+                    <a class="nav-item nav-link" id="help" href="/help">Help</a>
                 </div>
             </div>
         </nav>
@@ -65,32 +65,59 @@
         {% endwith %}
 
         <div class="container">
-{% block content %}
-<form method="POST">
-    <h3>Login</h3>
-    <div class="form-group">
-        <label for="email">Email address</label>
-        <input
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                placeholder="Enter email">
+         {% block content %}
+    <title>Profile preferences</title><br/>
+    <div data-role="content" data-theme="g"></div>
+    <label class="switch">
+        <div id="Step" data-role="fieldcontain">
+            <label for="Step">Steps-tracking</label>
+            <input id="steps" name="steps" type="checkbox" onclick="validate(this)">
+            <span class="slider round"></span><br/>
+        </div>
+        <div id="Sleep" data-role="fieldcontain">
+            <label for="Sleep">Sleep-tracking</label>
+            <input id="sleeps" name="sleeps" type="checkbox" onclick="validate(this)">
+            <span class="slider round"></span><br/>
+        </div>
+        <div id="Training" data-role="fieldcontain">
+            <label for="Training">Training-tracking</label>
+            <input id="trainings" name="trainings" type="checkbox" onclick="validate(this)">
+            <span class="slider round"></span><br/>
+        </div>
+        <div id="Calories" data-role="fieldcontain">
+            <label for="Calories">Calories-tracking</label>
+            <input id="caloriess" name="caloriess" type="checkbox" onclick="validate(this)">
+            <span class="slider round"></span><br/>
+        </div>
+        <div id="Pulse" data-role="fieldcontain">
+            <label for="Pulse">Pulse-tracking</label>
+            <input id="pulses" name="pulses" type="checkbox" onclick="validate(this)">
+            <span class="slider round"></span><br/>
+        </div>
+        <div id="SpO2" data-role="fieldcontain">
+            <label for="SpO2">SpO2-tracking</label>
+            <input id="spo2s" name="spo2s" type="checkbox" onclick="validate(this)">
+            <span class="slider round"></span><br/>
+        </div>
+        <div id="Stress" data-role="fieldcontain">
+            <label for="Stress">Stress-tracking</label>
+            <input id="stresss" name="stresss" type="checkbox" onclick="validate(this)" >
+            <span class="slider round"></span><br/>
+        </div>
+            <input type="submit" id="submit" value="Submit options"/>
+            <!-- needs css to get proper toggles -->
+        </label>
     </div>
+{% endblock %}
 
-    <div class="form-group">
-    <label for="password">Password</label>
-        <input
-                type="password"
-                class="form-control"
-                id="password"
-                name="password"
-                placeholder="Enter password">
-    </div>
-    <br />
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
-
+{% block scripts %}
+    <script type=text/javascript>
+    function validate(e) {
+      if (e.checked) {
+        alert(`Checked ${e.name} tracking`)
+      }
+    }
+    </script>
 {% endblock %}
         </div>
 

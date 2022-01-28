@@ -1,49 +1,183 @@
 {% extends "base.html" %}
-{% block title %}Sign Up{% endblock %}
-
-{% block content %}
-<form method="POST">
-    <h3 align="center">Sign up</h3>
-    <div class="form-group">
-        <label for="email">Email address</label>
-        <input
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                placeholder="Enter email">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+    />
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+    />
+    <title>{% block title %}Sign Up{% endblock %}</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbar"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" id="login" href="/login">Login</a>
+            <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            <a class="nav-item nav-link" id="addData" href="/add-data">Add Data</a>
+            <a class="nav-item nav-link" id="home" href="/">Home</a>
+            <a class="nav-item nav-link" id="main" href="/main-page">Main page</a>
+            <a class="nav-item nav-link" id="accountSettings" href="/account-settings">Account Settings</a>
+            <a class="nav-item nav-link" id="synchronize" href="/synchronize-page">Synchronize page</a>
+            <a class="nav-item nav-link" id="help" href="/help-page">Help</a>
+        </div>
     </div>
+</nav>
 
-    <div class="form-group">
-    <label for="firstName">First name</label>
-        <input
-                type="text"
-                class="form-control"
-                id="firstName"
-                name="firstName"
-                placeholder="Enter first name">
-    </div>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            {% if category == "error" %}
+                <div class="alert alert-danger alter-dismissable fade show">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% else %}
+                <div class="alert alert-success alter-dismissable fade show">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 
-    <div class="form-group">
-    <label for="password1">Password</label>
-        <input
-                type="password"
-                class="form-control"
-                id="password1"
-                name="password1"
-                placeholder="Enter password">
-    </div>
+<div class="container">
 
-    <div class="form-group">
-    <label for="password2">Password</label>
-        <input
-                type="password"
-                class="form-control"
-                id="password2"
-                name="password2"
-                placeholder="Confirm password">
-    </div>
-    <br />
-    <button type="submit" class="btn btn-primary">Sign up</button>
-</form>
-{% endblock %}
+    {% block content %}
+        <form method="POST">
+            <h3>Sign up</h3>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="Enter email">
+            </div>
+
+            <div class="form-group">
+                <label for="first_name">First name</label>
+                <input
+                        type="text"
+                        class="form-control"
+                        id="first_name"
+                        name="first_name"
+                        placeholder="Enter first name">
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input
+                        type="text"
+                        class="form-control"
+                        id="last_name"
+                        name="last_name"
+                        placeholder="Enter last name">
+            </div>
+
+            <div class="form-group">
+                <label for="password1">Password</label>
+                <input
+                        type="password"
+                        class="form-control"
+                        id="password1"
+                        oninput="verifyPassword()"
+                        name="password1"
+                        placeholder="Enter password">
+            </div>
+
+            <div class="info">
+                <span id="pwd-message"></span><br/>
+            </div>
+
+            <div class="form-group">
+                <label for="password2">Password</label>
+                <input
+                        type="password"
+                        class="form-control"
+                        id="password2"
+                        oninput="checkPassword()"
+                        name="password2"
+                        placeholder="Confirm password"
+                        disabled/> <br/>
+            </div>
+            <br/>
+            <input type="submit" id="submit" value="Save" disabled/>
+        </form>
+    {% endblock %}
+
+    {% block scripts %}
+        <script>
+            function checkPassword() {
+                let pwd1 = document.getElementById("password1");
+                let pwd2 = document.getElementById("password2");
+                document.getElementById("submit").disabled = pwd1.value !== pwd2.value;
+            }
+
+            function verifyPassword() {
+                let pwdInput = document.getElementById("password1");
+                let pwdMessage = document.getElementById("pwd-message");
+                let resultObj = CheckPassword(pwdInput.value);
+                pwdMessage.innerHTML = resultObj.message;
+                document.getElementById("password2").disabled = !resultObj.result;
+            }
+
+            function CheckPassword(inputtxt) {
+                let pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,1000}$/;
+                let obj = {}
+                if (inputtxt.match(pattern)) {
+                    obj.result = true;
+                    obj.message = "";
+                } else {
+                    obj.result = false;
+                    obj.message = "Password must be 6 characters long and contain at least 1 lower case letter, 1 upp case letter, 1 digit, and 1 special character."
+                }
+                return obj;
+            }
+
+        </script>
+    {% endblock %}
+
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>

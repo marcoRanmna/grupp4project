@@ -15,7 +15,7 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
-        <title>{% block title %}Log in{% endblock %}</title>
+        <title>{% block title %}Help{% endblock %}</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -37,7 +37,7 @@
                     <a class="nav-item nav-link" id="main" href="/main-page">Main page</a>
                     <a class="nav-item nav-link" id="accountSettings" href="/account-settings">Account Settings</a>
                     <a class="nav-item nav-link" id="synchronize" href="/synchronize-page">Synchronize page</a>
-                    <a class="nav-item nav-link" id="help" href="/help-page">Help</a>
+                    <a class="nav-item nav-link" id="help" href="/help">Help</a>
                 </div>
             </div>
         </nav>
@@ -65,33 +65,16 @@
         {% endwith %}
 
         <div class="container">
-{% block content %}
-<form method="POST">
-    <h3>Login</h3>
-    <div class="form-group">
-        <label for="email">Email address</label>
-        <input
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                placeholder="Enter email">
-    </div>
-
-    <div class="form-group">
-    <label for="password">Password</label>
-        <input
-                type="password"
-                class="form-control"
-                id="password"
-                name="password"
-                placeholder="Enter password">
-    </div>
-    <br />
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
-
-{% endblock %}
+         {% block content %}
+<picture>
+    <img src="bithappens.jpg">
+</picture>
+<p>Answers to FAQ and basic help.</p></>
+<p>This is a paragraph.</p>
+<p>This is a paragraph too.</p>
+<p>This is a paragraph too.</p>
+<p>Another is a paragraph too.</p>
+         {% endblock %}
         </div>
 
         <script

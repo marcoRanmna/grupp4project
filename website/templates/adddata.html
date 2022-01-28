@@ -15,7 +15,7 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
-        <title>{% block title %}Log in{% endblock %}</title>
+        <title>{% block title %}Add data{% endblock %}</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -65,33 +65,74 @@
         {% endwith %}
 
         <div class="container">
+
 {% block content %}
 <form method="POST">
-    <h3>Login</h3>
+    <h3>Add daily data</h3>
     <div class="form-group">
-        <label for="email">Email address</label>
+        <label for="date">Date for data</label>
         <input
-                type="email"
+                type="date"
                 class="form-control"
-                id="email"
-                name="email"
-                placeholder="Enter email">
+                id="date"
+                name="date"
+                placeholder="Enter date for data (mm/dd/yyyy)">
     </div>
 
     <div class="form-group">
-    <label for="password">Password</label>
+        <label for="steps">Steps</label>
         <input
-                type="password"
+                type="number"
                 class="form-control"
-                id="password"
-                name="password"
-                placeholder="Enter password">
+                id="steps"
+                name="steps"
+                placeholder="Enter steps">
     </div>
-    <br />
-    <button type="submit" class="btn btn-primary">Login</button>
+
+    <div class="form-group">
+    <label for="weight">Weight</label>
+        <input
+                type="number"
+                class="form-control"
+                id="weight"
+                name="weight"
+                placeholder="Enter weight">
+    </div>
+
+    <div class="form-group">
+        <label for="caloriesEaten">Calories eaten</label>
+        <input
+                type="number"
+                class="form-control"
+                id="caloriesEaten"
+                name="caloriesEaten"
+                placeholder="Enter calories eaten">
+    </div>
+
+    <div class="form-group">
+        <label for="caloriesBurned">Calories burned</label>
+        <input
+                type="number"
+                class="form-control"
+                id="caloriesBurned"
+                name="caloriesBurned"
+                placeholder="Enter calories burned">
+    </div>
+
+    <div class="form-group">
+        <label for="averagePulse">Average pulse</label>
+        <input
+                type="number"
+                class="form-control"
+                id="averagePulse"
+                name="averagePulse"
+                placeholder="Enter average pulse">
+    </div>
+
+        <input type="submit" id="submit" value="Save" />
 </form>
-
 {% endblock %}
+
         </div>
 
         <script
