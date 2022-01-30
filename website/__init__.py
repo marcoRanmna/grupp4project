@@ -5,6 +5,7 @@ def create_app():
     app = Flask(__name__)
     # app.config["SECRET_KEY"] = "aihduaoihduoia"
     app.config.from_pyfile("settings.py")
+    app.static_folder = 'static'
 
     from website.persistence.db import init_db
     init_db(app)
