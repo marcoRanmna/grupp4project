@@ -7,34 +7,12 @@
         <title>{% block title %}Account settings{% endblock %}</title>
     </head>
     <body>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-         {% if messages %}
-            {% for category, message in messages %}
-            {% if category == "error" %}
-            <div class="alert alert-danger alter-dismissable fade show">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% else %}
-            <div class="alert alert-success alter-dismissable fade show">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% endif %}
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
-
         <div class="container">
         {% block content %}
 <section class="py-5 my-5">
     <div class="container">
         <h1 class="mb-5">Account Settings</h1>
-        <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+        <div class="bs-dark shadow rounded-lg d-block d-sm-flex">
             <div class="profile-tab-nav border-right">
                 <div class="p-4">
                     <h4 class="text-center">Health Website</h4>
