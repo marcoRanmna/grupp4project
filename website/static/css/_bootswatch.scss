@@ -42,6 +42,22 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
   }
 }
 
+.container {
+  background-color: var(--bs-body-bg);
+}
+
+.profile-tab-nav.border-right {
+  background-color: var(--bs-body-bg);
+}
+
+.tab-content p-4 p-md-5 {
+  background-color: var(--bs-body-bg);
+}
+
+py-5 my-5 {
+  background-color: var(--bs-body-bg);
+}
+
 .breadcrumb a {
   color: $white;
 }
