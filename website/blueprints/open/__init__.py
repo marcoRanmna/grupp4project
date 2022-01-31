@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from website.controllers.user_controller import create_user
+from website.controllers.user_controller import create_user, login_user, verify_user
 
 bp_open = Blueprint("bp_open", __name__)
 
@@ -7,6 +7,18 @@ bp_open = Blueprint("bp_open", __name__)
 @bp_open.route("/login", methods=["GET", "POST"])
 def login():
     return render_template("login.html")
+
+
+@bp_open.route("/login", methods=["GET, POST"])
+def login_post():
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+        if not verify_user(email, password):
+            flash("Error")
+            return redirect(url_for("bp.open.login"))
+        login_user(email)
+        return redirect(url_for("bp.open.signup_get"))
 
 
 @bp_open.route("/sign-up", methods=["GET", "POST"])

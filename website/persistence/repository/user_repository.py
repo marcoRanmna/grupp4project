@@ -1,8 +1,12 @@
-from website.persistence.models import User
+from website.persistence.models import User, Data
 
 
 def create_user(user):
     User(user).save()
+
+
+def add_data(data):
+    Data(data).save()
 
 
 def get_user_by_email(email):
