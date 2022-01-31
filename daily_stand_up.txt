@@ -134,3 +134,14 @@ Get rid of bootstrap and just run css
 - Marco & Oscar: Continue work with database
 - Alexander: Add profile-pref to navbar
 
+2022-01-31 09:00
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Marco & Oscar: Had some problems with login, fixed issue with password check
+- Emma: Presented darkmode, showed site and things we could add, and made it easy to change to how we want it
+- Alexander: Navbar completed
+
+*Until next time:
+- Emma & Alexander: Continue working with css html
+- Marco & Oscar: Continue work with database
+
