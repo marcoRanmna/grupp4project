@@ -4,3 +4,8 @@ Name for sprint: Backend-shell and frontend-shell
 In sprintbacklog: Set up database, Sign in/sign up pages, Sync page, Sign out page,
 Profile prefs page, help page, Profile account-settings page, Main Page, Add data page
 
+Sprint planning meeting 2022-01-31 09:00
+Get database fully functional, and get a good structure with html and css on all files
+Name for sprint: Database and frontend-shell
+In sprintbacklog: Css-files, clean up html, connect database to project, calendar page, 
+requirement file, edit gitignore file, hasing and salting password
