@@ -1,4 +1,4 @@
-from website.controllers.user_controller import create_user, add_data
+from website.controllers.user_controller import create_user, add_data, verify_user, signin_user
 
 
 def main():
@@ -19,5 +19,14 @@ def data():
     add_data(date, steps, weight, calories_eaten, calories_burned, average_pulse)
 
 
+def test_password():
+    email = input(': ')
+    password = input(': ')
+    if not verify_user(email, password):
+        print('wrong password')
+    else:
+        print('success')
+
+
 if __name__ == '__main__':
-    data()
+    main()
