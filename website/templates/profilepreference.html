@@ -11,48 +11,38 @@
     <body>
         <div class="container">
          {% block content %}
-    <title>Profile preferences</title><br/>
-    <div data-role="content" data-theme="g"></div>
-    <label class="switch">
-        <div id="Step" data-role="fieldcontain">
-            <label for="Step">Steps-tracking</label>
-            <input id="steps" name="steps" type="checkbox" onclick="validate(this)">
-            <span class="slider round"></span><br/>
-        </div>
-        <div id="Sleep" data-role="fieldcontain">
-            <label for="Sleep">Sleep-tracking</label>
-            <input id="sleeps" name="sleeps" type="checkbox" onclick="validate(this)">
-            <span class="slider round"></span><br/>
-        </div>
-        <div id="Training" data-role="fieldcontain">
-            <label for="Training">Training-tracking</label>
-            <input id="trainings" name="trainings" type="checkbox" onclick="validate(this)">
-            <span class="slider round"></span><br/>
-        </div>
-        <div id="Calories" data-role="fieldcontain">
-            <label for="Calories">Calories-tracking</label>
-            <input id="caloriess" name="caloriess" type="checkbox" onclick="validate(this)">
-            <span class="slider round"></span><br/>
-        </div>
-        <div id="Pulse" data-role="fieldcontain">
-            <label for="Pulse">Pulse-tracking</label>
-            <input id="pulses" name="pulses" type="checkbox" onclick="validate(this)">
-            <span class="slider round"></span><br/>
-        </div>
-        <div id="SpO2" data-role="fieldcontain">
-            <label for="SpO2">SpO2-tracking</label>
-            <input id="spo2s" name="spo2s" type="checkbox" onclick="validate(this)">
-            <span class="slider round"></span><br/>
-        </div>
-        <div id="Stress" data-role="fieldcontain">
-            <label for="Stress">Stress-tracking</label>
-            <input id="stresss" name="stresss" type="checkbox" onclick="validate(this)" >
-            <span class="slider round"></span><br/>
-        </div>
-            <input type="submit" id="submit" value="Submit options"/>
-            <!-- needs css to get proper toggles -->
-        </label>
-    </div>
+<fieldset>
+      <legend class="mt-4">Profile preferences</legend>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sleep" onclick="validate(this)">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Sleep tracking</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="calorie" onclick="validate(this)">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Calorie tracking</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="step" onclick="validate(this)">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Step tracking</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="training" onclick="validate(this)">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Training tracking</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="pulse" onclick="validate(this)">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Pulse tracking</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sp02" onclick="validate(this)">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Sp02 tracking</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="stress" onclick="validate(this)">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Stress tracking</label>
+      </div>
+</fieldset>
+
 {% endblock %}
 
 {% block scripts %}
