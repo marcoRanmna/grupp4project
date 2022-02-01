@@ -1,4 +1,5 @@
 import datetime
+from passlib.hash import argon2
 from website.persistence.repository import user_repository
 from flask_login import login_user
 
@@ -9,7 +10,7 @@ def create_user(first_name, last_name, email, password):
         'last_name': last_name,
         'full_name': f'{first_name} {last_name}',
         'email': email,
-        'password': password,
+        'password': argon2.using(rounds=12).hash(password),
         'date_created': datetime.datetime.now(),
         'last_signin': None
     }
@@ -39,9 +40,13 @@ def signin_user(email):
         login_user(user)
         user.last_signin = datetime.datetime.now()
         user.save()
+    else:
+        print("error")
 
 
 def verify_user(email, password):
     user = user_repository.get_user_by_email(email)
     if user is None:
+        print("wrong email")
         return False
+    return argon2.verify(password, user.password)
