@@ -145,3 +145,12 @@ Present during stand-up meeting: Marco, Emma, Alexander, Oscar
 - Emma & Alexander: Continue working with css html
 - Marco & Oscar: Continue work with database
 
+2022-02-01 09:00
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Marco & Oscar: Worked on database but had post-problem with html. Oscar fixed with requirement-file also.
+- Emma & Alexander: Account-settings now shows as we want it to and navbar got updated and we cleaned up html-files
+
+*Until next time:
+- Emma & Alexander: Continue on htmlcss-branch
+- Marco & Oscar: Hashing and salting passwords and edit gitignore-file and add calendar page to project
