@@ -92,5 +92,10 @@
                 return obj;
             }
 
+            document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
+
+            function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+}
         </script>
     {% endblock %}

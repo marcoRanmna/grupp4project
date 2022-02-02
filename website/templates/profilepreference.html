@@ -44,5 +44,10 @@
         alert(`Checked ${e.name} tracking`)
       }
     }
+    document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
+
+    function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
     </script>
 {% endblock %}
