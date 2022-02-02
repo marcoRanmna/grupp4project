@@ -154,3 +154,13 @@ Present during stand-up meeting: Marco, Emma, Alexander, Oscar
 *Until next time:
 - Emma & Alexander: Continue on htmlcss-branch
 - Marco & Oscar: Hashing and salting passwords and edit gitignore-file and add calendar page to project
+
+2022-02-02 09:20
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Emma & Alexander: Worked on css files, cleaned up and fixed stuff in .html files
+- Marco & Oscar: Fixed hashing with password and edited .gitignore file
+
+*Until next time:
+- Emma & Alexander: Continue with last times work, cleaning .html files
+- Marco & Oscar: Speak with Joakim, fix post problem
