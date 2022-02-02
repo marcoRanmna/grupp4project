@@ -1,16 +1,5 @@
 {% extends "base.html" %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main-style.css') }}"/>
-        <title>{% block title %} Happy health {% endblock %}</title>
-    </head>
-    <body>
-        <div class="container">
          {% block content %}
              <h3>This is the Home page</h3>
              <p>We care about health which is why we want you to feel bad if you aren't taking good care about your health</p>
          {% endblock %}
-        </div>
-    </body>
-</html>
