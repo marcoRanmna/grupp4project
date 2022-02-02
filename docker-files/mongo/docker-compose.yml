@@ -9,6 +9,6 @@ services:
       - 27020:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: 47ec89905b6eb40fd3ae45f072c0480695e77618344a97ceeea787446f336a48
+      MONGO_INITDB_ROOT_PASSWORD: ff979eb04bc8f50f8e7b78abf1384dd0a12a3ff87e8bdcf373bedac19603bbcd
     volumes:
       - "./db_dump:/db_dump"

@@ -1,9 +1,9 @@
 from pymongo import MongoClient
 from abc import ABC
 
-client = MongoClient(f'mongodb://root:15ccee60ece3c0638631448534348d55155ed267382af84f26e46c90808f88dd@localhost:27020')
+client = MongoClient(f'mongodb://root:ff979eb04bc8f50f8e7b78abf1384dd0a12a3ff87e8bdcf373bedac19603bbcd@localhost:27020')
 db = client.users
-
+# ff979eb04bc8f50f8e7b78abf1384dd0a12a3ff87e8bdcf373bedac19603bbcd
 
 def init_db(app):
 

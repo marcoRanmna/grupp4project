@@ -4,7 +4,6 @@ from flask_login import LoginManager
 
 def create_app():
     app = Flask(__name__)
-    # app.config["SECRET_KEY"] = "aihduaoihduoia"
     app.config.from_pyfile("settings.py")
     app.static_folder = 'static'
 
