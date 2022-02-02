@@ -1,11 +1,4 @@
 {% extends "base.html" %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>{% block title %}Add data{% endblock %}</title>
-    </head>
-    <body>
-        <div class="container">
 
 {% block content %}
 <form method="POST">
@@ -72,8 +65,44 @@
 
         <input type="submit" id="submit" value="Save" />
 </form>
+<form method="POST">
+    <h3>Add training session</h3>
+    <div class="form-group">
+        <label for="date">Date for data</label>
+        <input
+                type="date"
+                class="form-control"
+                id="date"
+                name="date"
+                placeholder="Enter date for data (mm/dd/yyyy-hh:mm)">
+    </div>
+    <div class="form-group">
+        <label for="training">training session</label>
+        <input
+                type="text"
+                class="form-control"
+                id="type of exercise"
+                name="training-session"
+                placeholder="Enter for of exercise">
+    </div>
+    <div class="form-group">
+        <label for="averagePulse">Average pulse</label>
+        <input
+                type="number"
+                class="form-control"
+                id="averagePulse"
+                name="averagePulse"
+                placeholder="Enter average pulse">
+    </div>
+    <div class="form-group">
+        <label for="duration">duration</label>
+        <input
+                type="text"
+                class="form-control"
+                id="duration"
+                name="duration"
+                placeholder="Enter duration of session">
+    </div>
+    <input type="submit" id="submit" value="Save" />
+</form>
 {% endblock %}
-
-        </div>
-    </body>
-</html>
