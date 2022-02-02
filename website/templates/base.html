@@ -9,30 +9,51 @@
     <title>{% block title %} Happy health {% endblock %}</title>
 </head>
 <body>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbar"
-    >
-        <span class="navbar-toggler-icon"></span>
+  <div class="container-fluid">
+    <a class="navbar-brand" id="main" href="/main-page">Happy Health</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbar">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" id="login" href="/login">Login</a>
-            <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
-            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
-            <a class="nav-item nav-link" id="addData" href="/add-data">Add Data</a>
-            <a class="nav-item nav-link" id="home" href="/">Home</a>
-            <a class="nav-item nav-link" id="main" href="/main-page">Main page</a>
-            <a class="nav-item nav-link" id="accountSettings" href="/account-settings">Account Settings</a>
-            <a class="nav-item nav-link" id="synchronize" href="/synchronize-page">Synchronize page</a>
-            <a class="nav-item nav-link" id="profilePreference" href="/profile-preference">Profile preference</a>
-            <a class="nav-item nav-link" id="help_page" href="/help-page">Help</a>
-        </div>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" id="home" href="/">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="addData" href="/add-data">Add data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="synchronize" href="/synchronize-page">Synchronize</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="signUp" href="/sign-up">Sign up</a>
+        </li>
+        <li class="nav-item dropdown" id="menu">
+          <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
+          <div class="dropdown-menu" id="myDropdown">
+            <a class="dropdown-item" id="login" href="/login">Log in</a>
+            <a class="dropdown-item" id="accountSettings" href="/account-settings">Account settings</a>
+            <a class="dropdown-item" id="profilePreference" href="/profile-preference">Profile preferences</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" id="logout" href="/logout">Sign Out</a>
+          </div>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
+  </div>
 </nav>
+
+
 
 {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
@@ -62,7 +83,17 @@
     {% endblock %}
 </div>
 
-{% block scripts %} {% endblock %}
+{% block scripts %}
+    <script type=text/javascript>
+   // Get the button, and when the user clicks on it, execute myFunction
+document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+    </script>
+{% endblock %}
 
 </body>
 </html>
