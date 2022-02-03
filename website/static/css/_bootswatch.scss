@@ -36,6 +36,10 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
   background-color: black;
 }
 
+.float-xl-right {
+  @include float-right;
+}
+
 // Navs
 
 .nav-tabs,

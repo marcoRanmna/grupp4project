@@ -64,3 +64,11 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.float-xl-right {
+  float: right;
+}
+
+.float-xl-left {
+  float: left;
+}

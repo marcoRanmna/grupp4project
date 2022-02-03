@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <div class="float-xl-left">
 <form method="POST">
     <h3>Add daily data</h3>
     <div class="form-group">
@@ -115,7 +116,9 @@
 
         <input type="submit" id="submit1" value="Save" />
 </form>
-<form method="POST">
+    </div>
+<div class="float-xl-right">
+    <form method="POST">
     <h3>Add training session</h3>
     <div class="form-group">
         <label for="date">Date for data</label>
@@ -155,6 +158,8 @@
     </div>
     <input type="submit" id="submit2" value="Save" />
 </form>
+</div>
+<div class="float-xl-right">
     <form method="POST">
     <h3>Add sleep</h3>
     <div class="form-group">
@@ -195,6 +200,7 @@
     </div>
     <input type="submit" id="submit3" value="Save" />
 </form>
+    </div>
 {% endblock %}
 {% block scripts %}
     <!-- dropdown menu -->
