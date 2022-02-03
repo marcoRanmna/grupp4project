@@ -19,6 +19,14 @@
                 alert("Are you sure you want to sign out?");
             }
         }
+        <!-- dropdown menu -->
+    document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
+
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+}
+    <!-- dropdown menu -->
+
     </script>
 
 {% endblock %}

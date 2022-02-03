@@ -3,3 +3,14 @@
           <h1>This is the Main page</h1>
              <p>For logged in users</p>
          {% endblock %}
+{% block scripts %}
+    <script type=text/javascript>
+    <!-- dropdown menu -->
+    document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
+
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+}
+    <!-- dropdown menu -->
+    </script>
+{% endblock %}
