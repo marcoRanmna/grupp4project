@@ -27,6 +27,19 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
   color: $gray-700;
 }
 
+.form-group {
+  color: $white;
+}
+
+.py-5 my-5 {
+  color: $white;
+  background-color: black;
+}
+
+.float-xl-right {
+  @include float-right;
+}
+
 // Navs
 
 .nav-tabs,

@@ -1,71 +1,51 @@
 {% extends "base.html" %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{% block title %}Synchronize data{% endblock %}</title>
-    </head>
-    <body>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-         {% if messages %}
-            {% for category, message in messages %}
-            {% if category == "error" %}
-            <div class="alert alert-danger alter-dismissable fade show">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% else %}
-            <div class="alert alert-success alter-dismissable fade show">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% endif %}
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
-
-        <div class="container">
 
 {% block content %}
 <form method="POST">
     <h3>Synchronize your data</h3>
     <div class="form-group">
         <label for="calorie">Calorie data</label>
-        <button type="submit" class="btn btn-primary">Synchronize </button>
+        <button type="submit" class="btn btn-primary btn-sm">Synchronize </button>
     </div>
 
     <div class="form-group">
         <label for="sleep">Sleep data</label>
-        <button type="submit" class="btn btn-primary">Synchronize </button>
+        <button type="submit" class="btn btn-primary btn-sm">Synchronize </button>
     </div>
 
     <div class="form-group">
         <label for="step">Step data</label>
-        <button type="submit" class="btn btn-primary">Synchronize </button>
+        <button type="submit" class="btn btn-primary btn-sm">Synchronize </button>
     </div>
 
     <div class="form-group">
-        <label for="heart">Heart data</label>
-        <button type="submit" class="btn btn-primary">Synchronize </button>
+        <label for="stress">Stress data</label>
+        <button type="submit" class="btn btn-primary btn-sm">Synchronize </button>
     </div>
 
     <div class="form-group">
         <label for="pulse">Pulse data</label>
-        <button type="submit" class="btn btn-primary">Synchronize </button>
+        <button type="submit" class="btn btn-primary btn-sm">Synchronize </button>
     </div>
 
     <div class="form-group">
         <label for="blood_oxygen">Blood oxygen data</label>
-        <button type="submit" class="btn btn-primary">Synchronize </button>
+        <button type="submit" class="btn btn-primary btn-sm">Synchronize </button>
+    </div>
+    <div class="form-group">
+        <label for="training">Training data</label>
+        <button type="submit" class="btn btn-primary btn-sm">Synchronize </button>
     </div>
 </form>
 {% endblock %}
+{% block scripts %}
+    <!-- dropdown menu -->
+    <script type=text/javascript>
+    document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
 
-        </div>
-    </body>
-</html>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+}
+    <!-- dropdown menu -->
+    </script>
+{% endblock %}

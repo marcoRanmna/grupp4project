@@ -25,6 +25,8 @@ def create_app():
     from .synchronize import synchronize_page
     #from .adddata import add_data
     from .accountsettings import account_settings
+    from .profilepreference import profile_preference1
+    from .help_page import help_page1
     from website.blueprints.users import bp_users
 
     app.register_blueprint(views, url_prefix="/")
@@ -34,5 +36,7 @@ def create_app():
     app.register_blueprint(synchronize_page, url_perfix="/")
     #app.register_blueprint(add_data, url_prefix="/")
     app.register_blueprint(account_settings, url_prefix="/")
+    app.register_blueprint(profile_preference1, url_prefix="/")
+    app.register_blueprint(help_page1, url_prefix="/")
 
     return app

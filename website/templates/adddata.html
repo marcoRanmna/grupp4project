@@ -1,37 +1,7 @@
 {% extends "base.html" %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{% block title %}Add data{% endblock %}</title>
-    </head>
-    <body>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-         {% if messages %}
-            {% for category, message in messages %}
-            {% if category == "error" %}
-            <div class="alert alert-danger alter-dismissable fade show">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% else %}
-            <div class="alert alert-success alter-dismissable fade show">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% endif %}
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
-
-        <div class="container">
 
 {% block content %}
+    <div class="float-xl-left">
 <form method="POST">
     <h3>Add daily data</h3>
     <div class="form-group">
@@ -52,6 +22,16 @@
                 id="steps"
                 name="steps"
                 placeholder="Enter steps">
+    </div>
+
+    <div class="form-group">
+        <label for="trainingTime">Training time</label>
+        <input
+                type="number"
+                class="form-control"
+                id="trainingTime"
+                name="trainingTime"
+                placeholder="Enter training time in minutes">
     </div>
 
     <div class="form-group">
@@ -94,10 +74,142 @@
                 placeholder="Enter average pulse">
     </div>
 
-        <input type="submit" id="submit" value="Save" />
-</form>
-{% endblock %}
+    <div class="form-group">
+        <label for="highestPulse">Highest pulse</label>
+        <input
+                type="number"
+                class="form-control"
+                id="highestPulse"
+                name="highestPulse"
+                placeholder="Enter highest pulse">
+    </div>
 
-        </div>
-    </body>
-</html>
+    <div class="form-group">
+        <label for="lowestPulse">Lowest pulse</label>
+        <input
+                type="number"
+                class="form-control"
+                id="lowestPulse"
+                name="lowestPulse"
+                placeholder="Enter lowest pulse">
+    </div>
+
+    <div class="form-group">
+        <label for="averageStress">Average stress-level</label>
+        <input
+                type="number"
+                class="form-control"
+                id="averageStress"
+                name="averageStress"
+                placeholder="Enter average stress-level">
+    </div>
+
+    <div class="form-group">
+        <label for="averageO2">Average O2-levels</label>
+        <input
+                type="number"
+                class="form-control"
+                id="averageO2"
+                name="averageO2"
+                placeholder="Enter average O2-levels">
+    </div>
+
+        <input type="submit" id="submit1" value="Save" />
+</form>
+    </div>
+<div class="float-xl-right">
+    <form method="POST">
+    <h3>Add training session</h3>
+    <div class="form-group">
+        <label for="date">Date for data</label>
+        <input
+                type="date"
+                class="form-control"
+                id="date"
+                name="date"
+                placeholder="Enter date for data (mm/dd/yyyy-hh:mm)">
+    </div>
+    <div class="form-group">
+        <label for="training-session">training session</label>
+        <input
+                type="text"
+                class="form-control"
+                id="training-session"
+                name="training-session"
+                placeholder="Enter form of exercise">
+    </div>
+    <div class="form-group">
+        <label for="averagePulse">Average pulse</label>
+        <input
+                type="number"
+                class="form-control"
+                id="averagePulse"
+                name="averagePulse"
+                placeholder="Enter average pulse">
+    </div>
+    <div class="form-group">
+        <label for="duration">duration</label>
+        <input
+                type="text"
+                class="form-control"
+                id="duration"
+                name="duration"
+                placeholder="Enter duration of session">
+    </div>
+    <input type="submit" id="submit2" value="Save" />
+</form>
+</div>
+<div class="float-xl-right">
+    <form method="POST">
+    <h3>Add sleep</h3>
+    <div class="form-group">
+        <label for="date">Date for data</label>
+        <input
+                type="date"
+                class="form-control"
+                id="date"
+                name="date"
+                placeholder="Enter date for data (mm/dd/yyyy-hh:mm)">
+    </div>
+    <div class="form-group">
+        <label for="totalSleep">total sleep amount</label>
+        <input
+                type="text"
+                class="form-control"
+                id="totalSleep"
+                name="totalSleep"
+                placeholder="total amount of sleep">
+    </div>
+    <div class="form-group">
+        <label for="deepSleep">deep sleep</label>
+        <input
+                type="text"
+                class="form-control"
+                id="deepSleep"
+                name="deepSleep"
+                placeholder="Enter amount of deep sleep">
+    </div>
+    <div class="form-group">
+        <label for="lightSleep">light sleep</label>
+        <input
+                type="text"
+                class="form-control"
+                id="lightSleep"
+                name="lightSleep"
+                placeholder="Enter amount of light sleep">
+    </div>
+    <input type="submit" id="submit3" value="Save" />
+</form>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <!-- dropdown menu -->
+    <script type=text/javascript>
+    document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
+
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+}
+    <!-- dropdown menu -->
+    </script>
+{% endblock %}

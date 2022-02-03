@@ -1,35 +1,4 @@
 {% extends "base.html" %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{% block title %}Sign out{% endblock %}</title>
-    </head>
-    <body>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-         {% if messages %}
-            {% for category, message in messages %}
-            {% if category == "error" %}
-            <div class="alert alert-danger alter-dismissable fade show">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% else %}
-            <div class="alert alert-success alter-dismissable fade show">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% endif %}
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
-
-        <div class="container">
 {% block content %}
 <form method="post">
 <h3>Sign out page</h3>
@@ -50,9 +19,14 @@
                 alert("Are you sure you want to sign out?");
             }
         }
+        <!-- dropdown menu -->
+    document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
+
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+}
+    <!-- dropdown menu -->
+
     </script>
 
 {% endblock %}
-        </div>
-    </body>
-</html>
