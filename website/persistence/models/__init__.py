@@ -15,3 +15,7 @@ class User(Document):
 
     def get_id(self):
         return self.email
+
+
+class Data(Document):
+    collection = db.data
