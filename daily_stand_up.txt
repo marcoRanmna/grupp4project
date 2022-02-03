@@ -164,3 +164,13 @@ Present during stand-up meeting: Marco, Emma, Alexander, Oscar
 *Until next time:
 - Emma & Alexander: Continue with last times work, cleaning .html files
 - Marco & Oscar: Speak with Joakim, fix post problem
+
+2022-02-03 09:00
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Emma & Alexander: New navbar, updated add data, worked on css files, cleaned up and fixed stuff in .html files
+- Marco & Oscar: Fixed database and post-html problems
+
+*Until next time:
+- Emma & Alexander: Continue with last times work, css and html
+- Marco & Oscar: Connect remaining things to database, takes tasks from backlog since no tasks was left in sprint backlog
