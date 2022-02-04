@@ -174,3 +174,12 @@ Present during stand-up meeting: Marco, Emma, Alexander, Oscar
 *Until next time:
 - Emma & Alexander: Continue with last times work, css and html
 - Marco & Oscar: Connect remaining things to database, takes tasks from backlog since no tasks was left in sprint backlog
+
+2022-02-04 10:52
+Present during stand-up-meeting: Emma, Alexander, Oscar. Not present Marco due to being sick and unable to attend.
+Presented out work:
+- Emma & Alexander: Finished the htmlcss work for now and have merged branch to main.
+- Marco & Oscar: worked on database, issue with dicts. Will consult Joakim about the issue.
+
+* Until next time:
+- do sprint retrospecitve and on monday hold sprint-planning meeting and start new sprint
