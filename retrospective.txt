@@ -10,3 +10,12 @@ Present during meeting: Marco, Emma, Alexander, Oscar
 * Plan better and use priority for when we need more cards from backlog because sprint-backlog is empty.
 * prio 1 = high priority prio 5 = low priority and use prio 2 for cards that require prio 1-cards completed before they can be done.
 * when sprint-backlog is empty pull cards from backlog to sprint-backlog based on priority.
+
+Sprint retrospective 2022-02-04
+Present during meeting: Emma, Alexander, Oscar. Not present Marco due to being sick and unable to attend.
+* Were all issues finished: yes and no the additional issues weren't completed but the others were completed.
+* We have planned better and priority on backlog has helped and we have added cards when needed.
+* We have pulled cards from backlog into sprint-backlog during sprint when we ran out of cards.
+* Instead of waiting for lecture-day to get help from Joakim the suggestion is to either send him an email or send a PIM.
+Not elsewhere because that would be creepy.
+* Have a full-team design-meeting to make sure everyone is happy with design and functionality of website. Have the meeting as soon as possible.

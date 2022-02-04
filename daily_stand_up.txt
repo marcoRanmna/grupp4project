@@ -182,4 +182,5 @@ Presented out work:
 - Marco & Oscar: worked on database, issue with dicts. Will consult Joakim about the issue.
 
 * Until next time:
+- Oscar will contact Joakim for help and Alexander will fix help missing from navbar.
 - do sprint retrospecitve and on monday hold sprint-planning meeting and start new sprint
