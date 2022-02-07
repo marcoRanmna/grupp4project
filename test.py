@@ -1,4 +1,4 @@
-from website.controllers.user_controller import create_user, add_data, verify_user, signin_user
+from website.controllers.user_controller import create_user, add_data, verify_user
 
 
 def main():
