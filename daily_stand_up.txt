@@ -184,3 +184,15 @@ Presented out work:
 * Until next time:
 - Oscar will contact Joakim for help and Alexander will fix help missing from navbar.
 - do sprint retrospecitve and on monday hold sprint-planning meeting and start new sprint
+
+2022-02-07 09:39
+Present during stand-up: Oscar, Alexander and Emma. Not present: Marco that is still sick and unable to attend
+Presented our work:
+- Oscar has been in contact with Joakim.
+- Alexander has fixed what was missing.
+- We have done the retrospective and sprint-planning and also done design-meeting
+
+* Until next time:
+- Emma: Work on javascript for account-settings
+- Oscar: Work on account-settings to database connection
+- Alexander: Add cards to home page
