@@ -1,0 +1,8 @@
+Design-meeting 2022-02-07
+the base is fine. more centered and better font.
+where should things go.
+Regarding fonts we are going to look through https://fonts.google.com/variablefonts options and decide which ones are the preferred and vote on it.
+Limit how wide things are on the website.
+main-page when signed in have cards gathered near each other.
+
+ended at 09:18 present during meeting Marco, Oscar, Alexander, Emma.
