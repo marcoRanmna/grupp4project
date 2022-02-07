@@ -164,3 +164,35 @@ Present during stand-up meeting: Marco, Emma, Alexander, Oscar
 *Until next time:
 - Emma & Alexander: Continue with last times work, cleaning .html files
 - Marco & Oscar: Speak with Joakim, fix post problem
+
+2022-02-03 09:00
+Present during stand-up meeting: Marco, Emma, Alexander, Oscar
+*Presented our work:
+- Emma & Alexander: New navbar, updated add data, worked on css files, cleaned up and fixed stuff in .html files
+- Marco & Oscar: Fixed database and post-html problems
+
+*Until next time:
+- Emma & Alexander: Continue with last times work, css and html
+- Marco & Oscar: Connect remaining things to database, takes tasks from backlog since no tasks was left in sprint backlog
+
+2022-02-04 10:52
+Present during stand-up-meeting: Emma, Alexander, Oscar. Not present Marco due to being sick and unable to attend.
+Presented out work:
+- Emma & Alexander: Finished the htmlcss work for now and have merged branch to main.
+- Marco & Oscar: worked on database, issue with dicts. Will consult Joakim about the issue.
+
+* Until next time:
+- Oscar will contact Joakim for help and Alexander will fix help missing from navbar.
+- do sprint retrospecitve and on monday hold sprint-planning meeting and start new sprint
+
+2022-02-07 09:39
+Present during stand-up: Oscar, Alexander and Emma. Not present: Marco that is still sick and unable to attend
+Presented our work:
+- Oscar has been in contact with Joakim.
+- Alexander has fixed what was missing.
+- We have done the retrospective and sprint-planning and also done design-meeting
+
+* Until next time:
+- Emma: Work on javascript for account-settings
+- Oscar: Work on account-settings to database connection
+- Alexander: Add cards to home page
