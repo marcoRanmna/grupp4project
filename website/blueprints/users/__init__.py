@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from website.controllers.user_controller import add_data
+from website.controllers.user_controller import add_data, account_settings
 
 bp_users = Blueprint("bp_users", __name__)
 
@@ -40,3 +40,8 @@ def account_settings_post():
     last_name = request.form.get("lastName")
     email = request.form.get("email")
     bio = request.form.get("bio")
+    account_settings(first_name, last_name, email, bio)
+    flash("Account settings updated", category="success")
+    return redirect(url_for("bp_users.account_settings_get"))
+
+

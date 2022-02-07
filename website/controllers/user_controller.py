@@ -13,7 +13,7 @@ def create_user(first_name, last_name, email, password):
         'password': argon2.using(rounds=12).hash(password),
         'date_created': datetime.datetime.now(),
         'last_signin': None,
-        'bio': None
+        'bio': "Write somethings about yourself"
     }
 
     user_repository.create_user(user)
