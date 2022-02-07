@@ -9,3 +9,12 @@ Get database fully functional, and get a good structure with html and css on all
 Name for sprint: Database and frontend-shell
 In sprintbacklog: Css-files, clean up html, connect database to project, calendar page, 
 requirement file, edit gitignore file, hasing and salting password
+
+Sprint-planning meeting 2022-02-07 09:19 name: functional-website and database
+Get javascript on account-settings working on what is to be shown on page.
+Connect account-settings to database connection working.
+Connect calendar to database.
+Navbar for specified for logged in user.
+Add cards to home page.
+Add components for food and nutrients on website.
+Set calorie goal.
