@@ -36,6 +36,7 @@ def account_settings(first_name, last_name, email, bio):
     user = get_user_by_email(current_user.email)
     user.first_name = first_name
     user.last_name = last_name
+    user.full_name = first_name + " " + last_name
     user.email = email
     user.bio = bio
     user.save()
@@ -52,6 +53,7 @@ def signin_user(email):
         user.last_signin = datetime.datetime.now()
         user.save()
     else:
+        print(user)
         print("error")
 
 
@@ -61,3 +63,7 @@ def verify_user(email, password):
         print("wrong email")
         return False
     return argon2.verify(password, user.password)
+
+
+def get_user_data():
+    return get_user_by_email(current_user.email)

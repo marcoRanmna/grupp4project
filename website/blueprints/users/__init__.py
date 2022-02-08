@@ -1,5 +1,7 @@
+import json
+
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from website.controllers.user_controller import add_data, account_settings
+from website.controllers.user_controller import add_data, account_settings, get_user_data
 
 bp_users = Blueprint("bp_users", __name__)
 
@@ -40,8 +42,30 @@ def account_settings_post():
     last_name = request.form.get("lastName")
     email = request.form.get("email")
     bio = request.form.get("bio")
+    print(first_name, last_name, email, bio)
     account_settings(first_name, last_name, email, bio)
     flash("Account settings updated", category="success")
     return redirect(url_for("bp_users.account_settings_get"))
+
+
+@bp_users.route("/0186510e7b7767cc957fe1a77da0977fca7577e3b491681a587cbe348d390919", methods=["GET"])
+def user_data_get():
+    user_data = get_user_data()
+    user_data = user_data.__dict__
+    user_data["_id"] = str(user_data["_id"])
+    del user_data["date_created"]
+    del user_data["last_signin"]
+    print(user_data)
+
+
+    # data = []
+    # for user_d in user_data:
+    #     u_data = user_d.__dict__
+    #     u_data["_id"] = str(u_data["_id"])
+    #     print(u_data)
+    #     data.append(u_data)
+    # print(data)
+
+    return json.dumps(user_data)
 
 
