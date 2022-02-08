@@ -196,3 +196,16 @@ Presented our work:
 - Emma: Work on javascript for account-settings
 - Oscar: Work on account-settings to database connection
 - Alexander: Add cards to home page
+
+2022-02-08 09:00
+Present during stand-up: Alexander, Oscar and Emma. Not present during stand-up marco who is still sick.
+Presented our work:
+- Emma: Worked on account-settings
+- Oscar: Worked on account-settings to database connection
+- Alexander: Added cards to home page
+
+* Until next time:
+we can take cards from backlog if we run out of cards
+- Emma: work on navbar for specific user
+- Oscar: continue on account-settings to database-connection
+- Alexander: Add components for food and nutrients on website.
