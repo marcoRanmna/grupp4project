@@ -8,7 +8,7 @@ bp_users = Blueprint("bp_users", __name__)
 @bp_users.before_request
 def before_request():
     if not current_user.is_authenticated or not current_user.has_access('user'):
-        return redirect(url_for('bp_open.index'))
+        return redirect(url_for('bp_open.home'))
 
 @bp_users.route("/logout")
 def logout():

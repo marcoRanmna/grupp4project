@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/_bootswatch.scss') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main-style.css') }}"/>
-    <title>{% block title %} Happy health {% endblock %}</title>
+    <title>{% block title %} Happy health for {{ current_user.full_name }}{% endblock %}</title>
 </head>
 <body>
 
