@@ -1,8 +1,14 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from website.controllers.user_controller import add_data, account_settings
+from flask_login import login_required, logout_user, current_user
 
 bp_users = Blueprint("bp_users", __name__)
 
+
+@bp_users.before_request
+def before_request():
+    if not current_user.is_authenticated or not current_user.has_access('user'):
+        return redirect(url_for('bp_open.index'))
 
 @bp_users.route("/logout")
 def logout():
