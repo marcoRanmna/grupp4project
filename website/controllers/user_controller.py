@@ -13,10 +13,20 @@ def create_user(first_name, last_name, email, password):
         'password': argon2.using(rounds=12).hash(password),
         'date_created': datetime.datetime.now(),
         'last_signin': None,
+        # 'diary_entry': [],
         'bio': "Write somethings about yourself"
     }
 
     user_repository.create_user(user)
+
+
+def add_diary_note(diary_note):
+    diary_entry = {
+        'user_id': current_user._id,
+        'diary_note': diary_note
+    }
+
+    user_repository.add_diary_note(diary_entry)
 
 
 def add_data(date, steps, weight, calories_eaten, calories_burned, average_pulse):

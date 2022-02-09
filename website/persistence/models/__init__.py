@@ -19,3 +19,7 @@ class User(Document):
 
 class Data(Document):
     collection = db.data
+
+
+class Diary(Document):
+    collection = db.dairy

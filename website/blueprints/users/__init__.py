@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from website.controllers.user_controller import add_data, account_settings
+from website.controllers.user_controller import add_data, account_settings, add_diary_note
 from flask_login import login_required, logout_user, current_user
+
 
 bp_users = Blueprint("bp_users", __name__)
 
@@ -61,5 +62,9 @@ def account_settings_post():
 
 @bp_users.route("/diary", methods=["GET", "POST"])
 def diary():
+    if request.method == "POST":
+        diary_entry = request.form.get("diary_entry")
+        add_diary_note(diary_entry)
+        flash("Your diary note has been added!.", category="success")
     return render_template("diary.html")
 
