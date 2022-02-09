@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1> Your personal diary</h1>
+    <form action="{{ url_for('bp_users.diary') }}" method="POST">
+        <div class="form-group">
+            <label for="diary_entry">Diary entry</label>
+            <textarea
+                    type="textarea"
+                    class="form-control"
+                    id="diary_entry"
+                    name="diary_entry">
+            </textarea>
+        </div>
+        <br/>
+        <input type="submit" id="submit" value="Save"/>
+    </form>
+{% endblock %}
+
+{% block scripts %}
+    <!-- dropdown menu -->
+    <script type=text/javascript>
+        document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
+
+        function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    <!-- dropdown menu -->
+    </script>
+{% endblock %}
