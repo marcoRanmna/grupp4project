@@ -59,3 +59,7 @@ def account_settings_post():
     return redirect(url_for("bp_users.account_settings_get"))
 
 
+@bp_users.route("/diary", methods=["GET", "POST"])
+def diary():
+    return render_template("diary.html")
+
