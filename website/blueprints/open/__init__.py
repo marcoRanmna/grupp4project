@@ -20,7 +20,7 @@ def login_post():
             return redirect(url_for("bp_open.login"))
         signin_user(email)
         user_id = str(current_user._id).encode('utf-8')
-        resp = make_response(redirect(url_for('main.main')))
+        resp = make_response(redirect(url_for('views.home')))
         resp.set_cookie('user_id', user_id)
         return resp
         #return redirect(url_for("bp.open.signup_get"))
