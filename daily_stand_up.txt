@@ -209,3 +209,15 @@ we can take cards from backlog if we run out of cards
 - Emma: work on navbar for specific user
 - Oscar: continue on account-settings to database-connection
 - Alexander: Add components for food and nutrients on website.
+
+2022-02-09 08:45
+Present during stand-up: Alexander, Oscar, Marco, Emma
+Present our work:
+- Emma: work on navbar for specific user. did block-title and main-page modification and worked on routing a bit
+- Oscar: continue on account-settings to database-connection. There is a minor error in implementation on our project but works outside of the project.
+- Alexander: Add components for food and nutrients on website did so in the cards.
+
+* Until Next time:
+- Emma and Marco: Continue on navbar also do routing, modify blueprints and redirects.
+- Oscar: continue account settings database issue and work on calendar if there is time
+- Alexander: Center things on website,
