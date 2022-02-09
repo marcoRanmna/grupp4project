@@ -42,7 +42,7 @@ def add_data_post():
 
         add_data(date, steps, weight, calories_eaten, calories_burned, average_pulse)
         flash("Data added.", category="success")
-        return redirect(url_for("bp_open.login"))
+        return redirect(url_for("views.home"))
 
 
 @bp_users.route("/account-settings", methods=["GET"])
