@@ -19,6 +19,7 @@ def logout_get():
 @bp_users.route("/logout", methods=["POST"])
 def logout_post():
     if request.method == "POST":
+        logout_user()
         return redirect(url_for("main.main"))
 
 
