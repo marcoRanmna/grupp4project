@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-<form method="post">
-<h3>Sign out page</h3>
-<p>Are you sure you want to sign out?</p>
-  <label class="btn btn-primary">
-  <input id="submit2" name="submit2" type="submit" value="Sign Out" onclick="validate()">
-  </label>
-</form>
+    <form method="post">
+        <h3>Sign out page</h3>
+        <p>Are you sure you want to sign out?</p>
+        <label class="btn btn-primary">
+            <input id="submit2" name="submit2" type="submit" value="Sign Out" onclick="validate()">
+        </label>
+    </form>
 
 
 {% endblock %}
@@ -19,13 +19,17 @@
                 alert("Are you sure you want to sign out?");
             }
         }
-        <!-- dropdown menu -->
-    document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
 
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-}
-    <!-- dropdown menu -->
+        <!-- dropdown menu -->
+        document.getElementById("navbarDarkDropdownMenuLink").onclick = function () {
+            myFunction()
+        };
+
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        <!-- dropdown menu -->
 
     </script>
 
