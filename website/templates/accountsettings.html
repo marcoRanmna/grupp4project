@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-    <body onload="getData()">
     <form method="POST" xmlns="http://www.w3.org/1999/html">
         <section class="py-5 my-5">
             <div class="container">
@@ -133,7 +132,8 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    {#<button type="submit" class="btn btn-primary" disabled >Update</button>#}
+                                    <input type="submit" id="submit" class="btn btn-primary" value="Update" disabled/>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +142,6 @@
             </div>
         </section>
     </form>
-    </body>
 {% endblock %}
 {% block scripts %}
     <!-- dropdown menu -->

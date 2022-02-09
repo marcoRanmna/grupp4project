@@ -1,7 +1,7 @@
 import datetime
 from passlib.hash import argon2
 from website.persistence.repository import user_repository
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, logout_user
 
 
 def create_user(first_name, last_name, email, password):
@@ -33,14 +33,25 @@ def add_data(date, steps, weight, calories_eaten, calories_burned, average_pulse
 
 
 def account_settings(first_name, last_name, email, bio):
-    user = get_user_by_email(current_user.email)
+    user = user_repository.get_user_by_id(current_user._id)
     user.first_name = first_name
     user.last_name = last_name
     user.full_name = first_name + " " + last_name
     user.email = email
     user.bio = bio
     user.save()
+    logout_user()
 
+
+def password_settings(old_password, new_password):
+    if not verify_user(current_user.email, old_password):
+        print(current_user)
+        return False
+    user = user_repository.get_user_by_email(current_user.email)
+    user.password = argon2.using(rounds=12).hash(new_password)
+    user.save()
+    logout_user()
+    return True
 
 def get_user_by_email(email):
     return user_repository.get_user_by_email(email)
@@ -53,7 +64,6 @@ def signin_user(email):
         user.last_signin = datetime.datetime.now()
         user.save()
     else:
-        print(user)
         print("error")
 
 
@@ -66,4 +76,4 @@ def verify_user(email, password):
 
 
 def get_user_data():
-    return get_user_by_email(current_user.email)
+    return user_repository.get_user_by_id(current_user._id)
