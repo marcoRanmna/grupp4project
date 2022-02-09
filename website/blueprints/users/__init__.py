@@ -7,12 +7,19 @@ bp_users = Blueprint("bp_users", __name__)
 
 @bp_users.before_request
 def before_request():
-    if not current_user.is_authenticated or not current_user.has_access('user'):
-        return redirect(url_for('bp_open.home'))
+    if not current_user.is_authenticated:
+        return redirect(url_for('views.home'))
 
-@bp_users.route("/logout")
-def logout():
-    return "<p>Logout</p>"
+
+@bp_users.route("/logout", methods=["GET"])
+def logout_get():
+    return render_template("signout.html")
+
+
+@bp_users.route("/logout", methods=["POST"])
+def logout_post():
+    if request.method == "POST":
+        return redirect(url_for("main.main"))
 
 
 @bp_users.route("/add-data", methods=["GET"])
