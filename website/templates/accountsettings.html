@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+    <body onload="getData()">
     <form method="POST" xmlns="http://www.w3.org/1999/html">
         <section class="py-5 my-5">
             <div class="container">
@@ -36,7 +37,7 @@
                                                 class="form-control"
                                                 id="firstName"
                                                 name="firstName"
-                                                value="">
+                                                value={{ user_data.first_name }}>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -47,7 +48,7 @@
                                                 class="form-control"
                                                 id="lastName"
                                                 name="lastName"
-                                                value="">
+                                                value={{ user_data.last_name }}>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -58,15 +59,9 @@
                                                 class="form-control"
                                                 id="email"
                                                 name="email"
-                                                value="">
+                                                value={{ user_data.email }}>
                                     </div>
                                 </div>
-                                {#                                <div class="col-md-6">#}
-                                {#                                    <div class="form-group">#}
-                                {#                                        <label>Phone number</label>#}
-                                {#                                        <input type="text" class="form-control" value="+46 123456789">#}
-                                {#                                    </div>#}
-                                {#                                </div>#}
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="bio">Bio</label>
@@ -76,7 +71,7 @@
                                                 id="bio"
                                                 name="bio"
                                                 rows="4"
-                                        >Bio</textarea>
+                                        >{{ user_data.bio }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +127,6 @@
                                     </div>
                                 </div>
                                 <div>
-                                    {#<button type="submit" class="btn btn-primary" disabled >Update</button>#}
                                     <input type="submit" id="submit" class="btn btn-primary" value="Update" disabled/>
                                 </div>
                             </div>
@@ -142,6 +136,7 @@
             </div>
         </section>
     </form>
+    </body>
 {% endblock %}
 {% block scripts %}
     <!-- dropdown menu -->
@@ -183,22 +178,5 @@
             return obj;
         }
 
-        function getData() {
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.onreadystatechange = function () {
-                if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
-                    let data = JSON.parse(xmlHttp.responseText);
-                    data.forEach(
-                        (obj) => {
-                            document.getElementById("firstName").value += obj.first_name;
-                            document.getElementById("lastName").value += obj.last_name;
-                        }
-                    );
-                }
-
-            }
-            xmlHttp.open("GET", "http://127.0.0.1:5000/0186510e7b7767cc957fe1a77da0977fca7577e3b491681a587cbe348d390919", true); // true for asynchronous
-            xmlHttp.send(null);
-        }
     </script>
 {% endblock %}

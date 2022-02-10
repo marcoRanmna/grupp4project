@@ -15,8 +15,4 @@ def add_data(data):
 
 def get_user_by_email(email):
     return User.find(email=email).first_or_none()
-
-
-def get_user_data():
-    return User.find
     

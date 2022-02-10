@@ -33,7 +33,8 @@ def add_data_post():
 
 @bp_users.route("/account-settings", methods=["GET"])
 def account_settings_get():
-    return render_template("accountsettings.html")
+    user_data = get_user_data()
+    return render_template("accountsettings.html", user_data=user_data)
 
 
 @bp_users.route("/account-settings", methods=["POST"])
@@ -44,8 +45,6 @@ def account_settings_post():
     bio = request.form.get("bio")
     old_password = request.form.get("oldPassword1")
     new_password = request.form.get("newPassword1")
-    print(first_name, last_name, email, bio)
-    print(f"{new_password} this is my password")
     if old_password != "":
         if not password_settings(old_password, new_password):
             flash("You typed in the wrong old password")
@@ -70,15 +69,6 @@ def user_data_get():
     del user_data["date_created"]
     del user_data["last_signin"]
     print(user_data)
-
-
-    # data = []
-    # for user_d in user_data:
-    #     u_data = user_d.__dict__
-    #     u_data["_id"] = str(u_data["_id"])
-    #     print(u_data)
-    #     data.append(u_data)
-    # print(data)
 
     return json.dumps(user_data)
 
