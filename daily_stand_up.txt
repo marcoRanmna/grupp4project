@@ -221,3 +221,15 @@ Present our work:
 - Emma and Marco: Continue on navbar also do routing, modify blueprints and redirects.
 - Oscar: continue account settings database issue and work on calendar if there is time
 - Alexander: Center things on website,
+
+2022-02-10 09:00
+Present during stand-up: Alexander, Oscar, Marco, Emma
+Present our work:
+- Emma % Marco: Finished redirect for logged in user and offline user, also started work on diary
+- Oscar: Account settings finished
+- Alexander: Finished center things, added more things to add data
+
+* Until Next time:
+- Emma and Marco: Continue with diary
+- Oscar: Make data appear in the calendar, in account settings try to get all boxes already filled in
+- Alexander: See weight progress
