@@ -2,13 +2,27 @@ import json
 
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from website.controllers.user_controller import add_data, account_settings, get_user_data, password_settings
+from flask_login import login_required, logout_user, current_user
 
 bp_users = Blueprint("bp_users", __name__)
 
 
-@bp_users.route("/logout")
-def logout():
-    return "<p>Logout</p>"
+@bp_users.before_request
+def before_request():
+    if not current_user.is_authenticated:
+        return redirect(url_for('views.home'))
+
+
+@bp_users.route("/logout", methods=["GET"])
+def logout_get():
+    return render_template("signout.html")
+
+
+@bp_users.route("/logout", methods=["POST"])
+def logout_post():
+    if request.method == "POST":
+        logout_user()
+        return redirect(url_for("main.main"))
 
 
 @bp_users.route("/add-data", methods=["GET"])
