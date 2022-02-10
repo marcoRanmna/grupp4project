@@ -29,6 +29,15 @@ def add_diary_note(diary_note):
     user_repository.add_diary_note(diary_entry)
 
 
+def get_all_diary_notes_for_user():
+    diary_entries = user_repository.get_all_diary_notes_for_user(current_user._id)
+    for diary_entry in diary_entries:
+        diary_entry.diary_note =
+        diary_entry.diary_created =
+
+    return diary_entries
+
+
 def add_data(date, steps, weight, calories_eaten, calories_burned, average_pulse):
     data = {
         "user_id": current_user._id,
