@@ -1,11 +1,12 @@
-from website.persistence.models import User, Data, Diary
+from website.persistence.models import User, Data
 
 
 def create_user(user):
     User(user).save()
 
 
-def add_diary_note(diary):
+def add_diary_note(diary: dict):
+    from website.persistence.models import Diary
     Diary(diary).save()
 
 

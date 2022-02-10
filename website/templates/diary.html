@@ -12,18 +12,17 @@
             </textarea>
         </div>
         <br/>
-        <input type="submit" id="submit" value="Save"/>
+        <input type="submit" id="submit" value="Send"/>
     </form>
     <table>
         <tr>
             <th>Date</th>
             <th>Entry-note</th>
         </tr>
-        {% for diarynotes in diarynotes %}
+        {% for diarynote in bp_users.diary %}
             <tr>
-                <td>
-
-                </td>
+                <td>{{ diarynote.diary_created }}</td>
+                <td>{{ diarynote.diary_note }}</td>
             </tr>
         {% endfor %}
     </table>

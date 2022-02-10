@@ -66,5 +66,4 @@ def diary():
         diary_entry = request.form.get("diary_entry")
         add_diary_note(diary_entry)
         flash("Your diary note has been added!.", category="success")
-    return render_template("diary.html", diary_entry=diary_entry)
-
+    return render_template("diary.html")
