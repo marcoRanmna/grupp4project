@@ -16,11 +16,15 @@
     </form>
     <table>
         <tr>
+            <th>User fullname</th>
             <th>Date</th>
             <th>Entry-note</th>
         </tr>
-        {% for diarynote in bp_users.diary %}
+        {% for diarynote in diary_entries %}
             <tr>
+                <td>
+                    <a href="{{ url_for('bp_users.diary_get', user_id=current_user) }}">{{ current_user.full_name }}</a>
+                </td>
                 <td>{{ diarynote.diary_created }}</td>
                 <td>{{ diarynote.diary_note }}</td>
             </tr>

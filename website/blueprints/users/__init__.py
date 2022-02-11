@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from website.controllers.user_controller import add_data, account_settings, add_diary_note
+from website.controllers.user_controller import add_data, account_settings, add_diary_note, get_all_diary_notes_for_user
 from flask_login import login_required, logout_user, current_user
 
 
@@ -67,3 +67,9 @@ def diary():
         add_diary_note(diary_entry)
         flash("Your diary note has been added!.", category="success")
     return render_template("diary.html")
+
+@bp_users.route("/diary", methods=["GET"])
+def diary_get():
+    diary_entries = get_all_diary_notes_for_user()
+    return render_template("diary.html", diary_entries=diary_entries)
+

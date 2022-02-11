@@ -31,6 +31,10 @@ def add_diary_note(diary_note):
 
 def get_all_diary_notes_for_user():
     diary_entries = user_repository.get_all_diary_notes_for_user(current_user._id)
+    for diary_entry in diary_entries:
+        diary_entry.user_id = get_user_by_id(diary_entry.user_id)
+        diary_entry.diary_note
+        diary_entry.diary_created
 
     return diary_entries
 
