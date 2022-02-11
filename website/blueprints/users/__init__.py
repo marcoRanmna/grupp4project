@@ -1,8 +1,9 @@
 import json
 
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from website.controllers.user_controller import add_data, account_settings, get_user_data, password_settings
+from website.controllers.user_controller import add_data, account_settings, get_user_data, password_settings, add_diary_note, get_all_diary_notes_for_user
 from flask_login import login_required, logout_user, current_user
+
 
 bp_users = Blueprint("bp_users", __name__)
 
@@ -87,3 +88,16 @@ def user_data_get():
     return json.dumps(user_data)
 
 
+@bp_users.route("/diary", methods=["POST"])
+def diary():
+    diary_entry = request.form.get("diary_entry")
+    add_diary_note(diary_entry)
+    flash("Your diary note has been added!.", category="success")
+    return redirect(request.referrer)
+    # return render_template("diary.html", diary_entry=diary_entry)
+
+
+@bp_users.route("/diary", methods=["GET"])
+def diary_get():
+    diary_entries = get_all_diary_notes_for_user()
+    return render_template("diary.html", diary_entries=diary_entries)
