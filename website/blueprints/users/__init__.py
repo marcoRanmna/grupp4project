@@ -68,8 +68,8 @@ def diary():
     return redirect(request.referrer)
     # return render_template("diary.html", diary_entry=diary_entry)
 
+
 @bp_users.route("/diary", methods=["GET"])
 def diary_get():
     diary_entries = get_all_diary_notes_for_user()
     return render_template("diary.html", diary_entries=diary_entries)
-
