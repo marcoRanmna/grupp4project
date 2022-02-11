@@ -60,13 +60,12 @@ def account_settings_post():
     return redirect(url_for("bp_users.account_settings_get"))
 
 
-@bp_users.route("/diary", methods=["GET", "POST"])
+@bp_users.route("/diary", methods=["POST"])
 def diary():
-    if request.method == "POST":
-        diary_entry = request.form.get("diary_entry")
-        add_diary_note(diary_entry)
-        flash("Your diary note has been added!.", category="success")
-    return render_template("diary.html")
+    diary_entry = request.form.get("diary_entry")
+    add_diary_note(diary_entry)
+    flash("Your diary note has been added!.", category="success")
+    return render_template("diary.html", diary_entry=diary_entry)
 
 @bp_users.route("/diary", methods=["GET"])
 def diary_get():

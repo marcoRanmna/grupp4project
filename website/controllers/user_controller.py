@@ -3,6 +3,9 @@ from passlib.hash import argon2
 from website.persistence.repository import user_repository
 from flask_login import login_user, current_user
 
+from website.persistence.repository.user_repository import get_diary_note_by_id
+from website.persistence.repository.user_repository import get_user_by_id
+
 
 def create_user(first_name, last_name, email, password):
     user = {
