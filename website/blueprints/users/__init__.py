@@ -77,19 +77,23 @@ def account_settings_post():
 
 @bp_users.route("/calendar", methods=["GET"])
 def calendar_get():
-    data = get_data_for_user()
-    data = data.__dict__
-    data = json.dumps(data)
-    datas = [
-        {
-            'id': 'event1',
-            'name': "New Year",
-            'date': "2021-02-14",
-            'description': "is this working",
-            'type': "holiday"
-        }
-    ]
-    return render_template("calendar.html", data=json.dumps(datas))
+    data_user = get_data_for_user()
+    data = []
+    for data_u in data_user:
+        data_u = data_u.__dict__
+        del data_u["_id"]
+        del data_u["user_id"]
+        data.append(data_u)
+    print(data)
+    # data = [
+    #     {
+    #         'name': "New Year",
+    #         'date': "2021-02-14",
+    #         'description': "is this working",
+    #         'type': "holiday"
+    #     }
+    # ]
+    return render_template("calendar.html", data=json.dumps(data))
 
 
 @bp_users.route("/0186510e7b7767cc957fe1a77da0977fca7577e3b491681a587cbe348d390919", methods=["GET"])

@@ -17,6 +17,7 @@
 
 
     <div id="calendar"></div>
+    <input type="hidden" id="data" value="{{ data }}">
 
 
 </div>
@@ -27,7 +28,8 @@
 
 <script>
 
-    let data = ("{{ data }}")
+    let data = JSON.parse(document.getElementById("data").value)
+    console.log(data)
 
     $(document).ready(function () {
         $('#calendar').evoCalendar({

@@ -1,4 +1,6 @@
 import datetime
+import random
+
 from passlib.hash import argon2
 from website.persistence.repository import user_repository
 from flask_login import login_user, current_user, logout_user
@@ -20,14 +22,22 @@ def create_user(first_name, last_name, email, password):
 
 
 def add_data(date, steps, weight, calories_eaten, calories_burned, average_pulse):
+    # data = {
+    #     "user_id": current_user._id,
+    #     "date": date,
+    #     "steps": steps,
+    #     "weight": weight,
+    #     "calories_eaten": calories_eaten,
+    #     "calories_burned": calories_burned,
+    #     "average_pulse": average_pulse
+    # }
     data = {
-        "user_id": current_user._id,
-        "date": date,
-        "steps": steps,
-        "weight": weight,
-        "calories_eaten": calories_eaten,
-        "calories_burned": calories_burned,
-        "average_pulse": average_pulse
+        'id': random.randint(1, 9999),
+        'user_id': current_user._id,
+        'name': "Data",
+        'date': date,
+        'description': f"Steps:{steps}, Weight:{weight}, Calories-eaten:{calories_eaten}, "
+                       f"Calories-burned:{calories_burned}, Average-pulse:{average_pulse}"
     }
     user_repository.add_data(data)
 
@@ -81,4 +91,5 @@ def get_user_data():
 
 
 def get_data_for_user():
+    print(user_repository.get_data_by_id(current_user._id))
     return user_repository.get_data_by_id(current_user._id)
