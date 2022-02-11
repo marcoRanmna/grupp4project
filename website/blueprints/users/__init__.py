@@ -1,7 +1,7 @@
 import json
 
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from website.controllers.user_controller import add_data, account_settings, get_user_data, password_settings
+from website.controllers.user_controller import add_data, account_settings, get_user_data, password_settings, get_data_for_user
 from flask_login import login_required, logout_user, current_user
 
 bp_users = Blueprint("bp_users", __name__)
@@ -42,7 +42,7 @@ def add_data_post():
 
         add_data(date, steps, weight, calories_eaten, calories_burned, average_pulse)
         flash("Data added.", category="success")
-        return redirect(url_for("bp_open.login"))
+        return redirect(url_for("bp_users.add_data_post"))
 
 
 @bp_users.route("/account-settings", methods=["GET"])
@@ -75,6 +75,23 @@ def account_settings_post():
     return redirect(url_for("main.main"))
 
 
+@bp_users.route("/calendar", methods=["GET"])
+def calendar_get():
+    data = get_data_for_user()
+    data = data.__dict__
+    data = json.dumps(data)
+    datas = [
+        {
+            'id': 'event1',
+            'name': "New Year",
+            'date': "2021-02-14",
+            'description': "is this working",
+            'type': "holiday"
+        }
+    ]
+    return render_template("calendar.html", data=json.dumps(datas))
+
+
 @bp_users.route("/0186510e7b7767cc957fe1a77da0977fca7577e3b491681a587cbe348d390919", methods=["GET"])
 def user_data_get():
     user_data = get_user_data()
@@ -85,5 +102,3 @@ def user_data_get():
     print(user_data)
 
     return json.dumps(user_data)
-
-

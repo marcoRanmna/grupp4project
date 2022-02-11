@@ -53,6 +53,7 @@ def password_settings(old_password, new_password):
     logout_user()
     return True
 
+
 def get_user_by_email(email):
     return user_repository.get_user_by_email(email)
 
@@ -77,3 +78,7 @@ def verify_user(email, password):
 
 def get_user_data():
     return user_repository.get_user_by_id(current_user._id)
+
+
+def get_data_for_user():
+    return user_repository.get_data_by_id(current_user._id)

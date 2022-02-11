@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <title>Calendar</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/evo-calendar.min.css">
+    <link rel="stylesheet" href="../static/css/evo-calendar.midnight-blue.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+<div class="hero">
+
+
+    <div id="calendar"></div>
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="../static/js/evo-calendar.min.js"></script>
+
+<script>
+
+    let data = ("{{ data }}")
+
+    $(document).ready(function () {
+        $('#calendar').evoCalendar({
+
+            calendarEvents: data
+        })
+    })
+
+</script>
+
+
+</body>
+
+</html>
