@@ -235,7 +235,7 @@ Present our work:
 - Alexander: See weight progress
 
 2022-02-11 09:34
-Present during stand-up: Alexander, Marco, Emma
+Present during stand-up: Alexander, Marco, Emma, Oscar
 Present our work:
 - Emma and Marco: Had issues with the diary not working properly
 - Oscar: Finished with data appear in calendar and account settings
@@ -246,3 +246,13 @@ Present our work:
 - Oscar: Finnish work with calendar
 - Alexander: add rest of card to home-page and add foods to database
 
+2022-02-14 10:18
+Present during stand-up: Alexander, Marco, Emma, Oscar
+- Emma & Marco: diary is done and works
+- Oscar: not done with calendar and ran into issue. Marco helped a bit and they contacted Joakim.
+- Alexander: worked with Rgraph and switched to charts.
+
+* Until next time:
+- Alexander: finish with charts to home-page. Emma will help a bit
+- Emma: Do class diagram and help Alexander.
+- Oscar and Marco: Finish calendar by switching to similar to diary-solution.
