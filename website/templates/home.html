@@ -65,22 +65,91 @@
              <div class="card border-secondary mb-3" style="max-width: 20rem;">
                  <div class="card-header">Sleep</div>
                 <div class="card-body">
-                <h4 class="card-title">Test card</h4>
-                <p class="card-text">We care about health which is why we want you to feel bad if you aren't taking good care about your health</p>
+                <canvas id="lineChart3" width="300" height="140"></canvas>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+                    <script>
+                    var ctx = document.getElementById("lineChart3").getContext("2d");
+                    var lineChart3 = new Chart(ctx, {
+                        type: "line",
+                        data: {
+                            labels: {{ labels | safe }},
+                            datasets: [
+                    {
+                                label: "Data points",
+                                data: {{ values | safe }},
+                                fill: false,
+                                borderColor: "rgb(75, 192, 192)",
+                                lineTension: 0.5
+
+                    }
+                ]
+            },
+            options: {
+                responsive: false
+            }
+
+        });
+                    </script>
                 </div>
                 </div>
              <div class="card border-secondary mb-3" style="max-width: 20rem;">
                  <div class="card-header">Stress</div>
                 <div class="card-body">
-                <h4 class="card-title">Test card</h4>
-                <p class="card-text">We care about health which is why we want you to feel bad if you aren't taking good care about your health</p>
+                <canvas id="lineChart2" width="300" height="140"></canvas>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+                    <script>
+                    var ctx = document.getElementById("lineChart2").getContext("2d");
+                    var lineChart2 = new Chart(ctx, {
+                        type: "line",
+                        data: {
+                            labels: {{ labels | safe }},
+                            datasets: [
+                    {
+                                label: "Data points",
+                                data: {{ values | safe }},
+                                fill: true,
+                                borderColor: "rgb(75, 192, 192)",
+                                lineTension: 0.5
+
+                    }
+                ]
+            },
+            options: {
+                responsive: false
+            }
+
+        });
+                    </script>
              </div>
              </div>
              <div class="card border-secondary mb-3" style="max-width: 20rem;">
                  <div class="card-header">02-levels</div>
                 <div class="card-body">
-                <canvas id="lineChart" width="318" height="140"></canvas>
-                    <script src="../static/script/graph.js"></script>
+                <canvas id="lineChart" width="300" height="140"></canvas>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+                    <script>
+                    var ctx = document.getElementById("lineChart").getContext("2d");
+                    var lineChart = new Chart(ctx, {
+                        type: "line",
+                        data: {
+                            labels: {{ labels | safe }},
+                            datasets: [
+                    {
+                                label: "Data points",
+                                data: {{ values | safe }},
+                                fill: true,
+                                borderColor: "rgb(75, 192, 192)",
+                                lineTension: 0.5
+
+                    }
+                ]
+            },
+            options: {
+                responsive: false
+            }
+
+        });
+                    </script>
              </div>
              </div>
              </div>

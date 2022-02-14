@@ -1,17 +1,17 @@
 import json
 
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, render_template, request, redirect, url_for, flash, Flask
 from website.controllers.user_controller import add_data, account_settings, get_user_data, password_settings, add_diary_note, get_all_diary_notes_for_user
 from flask_login import login_required, logout_user, current_user
 
-
+app = Flask(__name__)
 bp_users = Blueprint("bp_users", __name__)
 
 
 @bp_users.before_request
 def before_request():
     if not current_user.is_authenticated:
-        return redirect(url_for('views.home'))
+        return redirect(url_for('main.main'))
 
 
 @bp_users.route("/logout", methods=["GET"])
