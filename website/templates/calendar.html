@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1> Your Calendar</h1>
+    <form action="{{ url_for('bp_users.calendar_post') }}" method="POST">
+        <div class="form-group">
+            <label for="calendar">Enter date you want to see</label>
+            <input
+                    type="date"
+                    class="form-control"
+                    id="date"
+                    name="date"
+                    placeholder="Enter date">
+        </div>
+        <br/>
+        <input type="submit" id="submit" value="Show"/>
+    </form>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Date</th>
+            <th>Data</th>
+        </tr>
+        {% for data in data_user %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('bp_users.calendar_get', user_id=current_user) }}">{{ current_user.full_name }}</a>
+                </td>
+                <td>{{ data.date }}</td>
+                <td>{{ data.data }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block scripts %}
+    <!-- dropdown menu -->
+    <script type=text/javascript>
+        document.getElementById("navbarDarkDropdownMenuLink").onclick = function () {
+            myFunction()
+        };
+
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        <!-- dropdown menu -->
+
+    </script>
+{% endblock %}

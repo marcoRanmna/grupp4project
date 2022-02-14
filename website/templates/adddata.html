@@ -2,242 +2,245 @@
 
 {% block content %}
     <div class="row mx-md-n5">
-    <div class="col px-md-5">
-<form method="POST">
-    <h3>Add daily data</h3>
-    <div class="form-group">
-        <label for="date">Date for data</label>
-        <input
-                type="date"
-                class="form-control"
-                id="date"
-                name="date"
-                placeholder="Enter date for data (mm/dd/yyyy)">
-    </div>
+        <div class="col px-md-5">
+            <form method="POST">
+                <h3>Add daily data</h3>
+                <div class="form-group">
+                    <label for="date">Date for data</label>
+                    <input
+                            type="date"
+                            class="form-control"
+                            id="date"
+                            name="date"
+                            placeholder="Enter date for data (mm/dd/yyyy)">
+                </div>
 
-    <div class="form-group">
-        <label for="steps">Steps</label>
-        <input
-                type="number"
-                class="form-control"
-                id="steps"
-                name="steps"
-                placeholder="Enter steps">
-    </div>
+                <div class="form-group">
+                    <label for="steps">Steps</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="steps"
+                            name="steps"
+                            placeholder="Enter steps">
+                </div>
 
-    <div class="form-group">
-        <label for="trainingTime">Training time</label>
-        <input
-                type="number"
-                class="form-control"
-                id="trainingTime"
-                name="trainingTime"
-                placeholder="Enter training time in minutes">
-    </div>
+                <div class="form-group">
+                    <label for="trainingTime">Training time</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="trainingTime"
+                            name="trainingTime"
+                            placeholder="Enter training time in minutes">
+                </div>
 
-    <div class="form-group">
-    <label for="weight">Weight</label>
-        <input
-                type="number"
-                class="form-control"
-                id="weight"
-                name="weight"
-                placeholder="Enter weight">
-    </div>
+                <div class="form-group">
+                    <label for="weight">Weight</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="weight"
+                            name="weight"
+                            placeholder="Enter weight">
+                </div>
 
-    <div class="form-group">
-        <label for="caloriesEaten">Calories eaten</label>
-        <input
-                type="number"
-                class="form-control"
-                id="caloriesEaten"
-                name="caloriesEaten"
-                placeholder="Enter calories eaten">
-    </div>
+                <div class="form-group">
+                    <label for="caloriesEaten">Calories eaten</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="caloriesEaten"
+                            name="caloriesEaten"
+                            placeholder="Enter calories eaten">
+                </div>
 
-    <div class="form-group">
-        <label for="caloriesBurned">Calories burned</label>
-        <input
-                type="number"
-                class="form-control"
-                id="caloriesBurned"
-                name="caloriesBurned"
-                placeholder="Enter calories burned">
-    </div>
+                <div class="form-group">
+                    <label for="caloriesBurned">Calories burned</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="caloriesBurned"
+                            name="caloriesBurned"
+                            placeholder="Enter calories burned">
+                </div>
 
-    <div class="form-group">
-        <label for="averagePulse">Average pulse</label>
-        <input
-                type="number"
-                class="form-control"
-                id="averagePulse"
-                name="averagePulse"
-                placeholder="Enter average pulse">
-    </div>
+                <div class="form-group">
+                    <label for="averagePulse">Average pulse</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="averagePulse"
+                            name="averagePulse"
+                            placeholder="Enter average pulse">
+                </div>
 
-    <div class="form-group">
-        <label for="highestPulse">Highest pulse</label>
-        <input
-                type="number"
-                class="form-control"
-                id="highestPulse"
-                name="highestPulse"
-                placeholder="Enter highest pulse">
-    </div>
+                <div class="form-group">
+                    <label for="highestPulse">Highest pulse</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="highestPulse"
+                            name="highestPulse"
+                            placeholder="Enter highest pulse">
+                </div>
 
-    <div class="form-group">
-        <label for="lowestPulse">Lowest pulse</label>
-        <input
-                type="number"
-                class="form-control"
-                id="lowestPulse"
-                name="lowestPulse"
-                placeholder="Enter lowest pulse">
-    </div>
+                <div class="form-group">
+                    <label for="lowestPulse">Lowest pulse</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="lowestPulse"
+                            name="lowestPulse"
+                            placeholder="Enter lowest pulse">
+                </div>
 
-    <div class="form-group">
-        <label for="averageStress">Average stress-level</label>
-        <input
-                type="number"
-                class="form-control"
-                id="averageStress"
-                name="averageStress"
-                placeholder="Enter average stress-level">
-    </div>
+                <div class="form-group">
+                    <label for="averageStress">Average stress-level</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="averageStress"
+                            name="averageStress"
+                            placeholder="Enter average stress-level">
+                </div>
 
-    <div class="form-group">
-        <label for="averageO2">Average O2-levels</label>
-        <input
-                type="number"
-                class="form-control"
-                id="averageO2"
-                name="averageO2"
-                placeholder="Enter average O2-levels">
-    </div>
+                <div class="form-group">
+                    <label for="averageO2">Average O2-levels</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="averageO2"
+                            name="averageO2"
+                            placeholder="Enter average O2-levels">
+                </div>
 
-        <input type="submit" id="submit1" value="Save" />
-</form>
-    </div>
-<div class="col px-md-5">
-    <form method="POST">
-    <h3>Add training session</h3>
-    <div class="form-group">
-        <label for="date">Date for data</label>
-        <input
-                type="date"
-                class="form-control"
-                id="date"
-                name="date"
-                placeholder="Enter date for data (mm/dd/yyyy-hh:mm)">
-    </div>
-    <div class="form-group">
-        <label for="training-session">training session</label>
-        <input
-                type="text"
-                class="form-control"
-                id="training-session"
-                name="training-session"
-                placeholder="Enter form of exercise">
-    </div>
-    <div class="form-group">
-        <label for="averagePulse">Average pulse</label>
-        <input
-                type="number"
-                class="form-control"
-                id="averagePulse"
-                name="averagePulse"
-                placeholder="Enter average pulse">
-    </div>
-    <div class="form-group">
-        <label for="duration">duration</label>
-        <input
-                type="text"
-                class="form-control"
-                id="duration"
-                name="duration"
-                placeholder="Enter duration of session">
-    </div>
-    <input type="submit" id="submit2" value="Save" />
-</form>
-    <form method="POST">
-        <h3>Food search</h3>
-    <div class="form-group">
-        <label for="foodSearch"></label>
-        <input
-                type="text"
-                class="form-control"
-                id="foodSearch"
-                name="foodSearch"
-                placeholder="Search for food">
-    </div>
-    <input type="submit" id="submit5" value="Save" />
-    </form>
-</div>
-<div class="col px-md-5">
-    <form method="POST">
-    <h3>Add sleep</h3>
-    <div class="form-group">
-        <label for="date">Date for data</label>
-        <input
-                type="date"
-                class="form-control"
-                id="date"
-                name="date"
-                placeholder="Enter date for data (mm/dd/yyyy-hh:mm)">
-    </div>
-    <div class="form-group">
-        <label for="totalSleep">total sleep amount</label>
-        <input
-                type="text"
-                class="form-control"
-                id="totalSleep"
-                name="totalSleep"
-                placeholder="total amount of sleep">
-    </div>
-    <div class="form-group">
-        <label for="deepSleep">deep sleep</label>
-        <input
-                type="text"
-                class="form-control"
-                id="deepSleep"
-                name="deepSleep"
-                placeholder="Enter amount of deep sleep">
-    </div>
-    <div class="form-group">
-        <label for="lightSleep">light sleep</label>
-        <input
-                type="text"
-                class="form-control"
-                id="lightSleep"
-                name="lightSleep"
-                placeholder="Enter amount of light sleep">
-    </div>
-    <input type="submit" id="submit3" value="Save" />
+                <input type="submit" id="submit1" value="Save"/>
+            </form>
+        </div>
+        <div class="col px-md-5">
+            <form method="POST">
+                <h3>Add training session</h3>
+                <div class="form-group">
+                    <label for="date">Date for data</label>
+                    <input
+                            type="date"
+                            class="form-control"
+                            id="date"
+                            name="date"
+                            placeholder="Enter date for data (mm/dd/yyyy-hh:mm)">
+                </div>
+                <div class="form-group">
+                    <label for="training-session">training session</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="training-session"
+                            name="training-session"
+                            placeholder="Enter form of exercise">
+                </div>
+                <div class="form-group">
+                    <label for="averagePulse">Average pulse</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="averagePulse"
+                            name="averagePulse"
+                            placeholder="Enter average pulse">
+                </div>
+                <div class="form-group">
+                    <label for="duration">duration</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="duration"
+                            name="duration"
+                            placeholder="Enter duration of session">
+                </div>
+                <input type="submit" id="submit2" value="Save"/>
+            </form>
+            <form method="POST">
+                <h3>Food search</h3>
+                <div class="form-group">
+                    <label for="foodSearch"></label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="foodSearch"
+                            name="foodSearch"
+                            placeholder="Search for food">
+                </div>
+                <input type="submit" id="submit5" value="Save"/>
+            </form>
+        </div>
+        <div class="col px-md-5">
+            <form method="POST">
+                <h3>Add sleep</h3>
+                <div class="form-group">
+                    <label for="date">Date for data</label>
+                    <input
+                            type="date"
+                            class="form-control"
+                            id="date"
+                            name="date"
+                            placeholder="Enter date for data (mm/dd/yyyy-hh:mm)">
+                </div>
+                <div class="form-group">
+                    <label for="totalSleep">total sleep amount</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="totalSleep"
+                            name="totalSleep"
+                            placeholder="total amount of sleep">
+                </div>
+                <div class="form-group">
+                    <label for="deepSleep">deep sleep</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="deepSleep"
+                            name="deepSleep"
+                            placeholder="Enter amount of deep sleep">
+                </div>
+                <div class="form-group">
+                    <label for="lightSleep">light sleep</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="lightSleep"
+                            name="lightSleep"
+                            placeholder="Enter amount of light sleep">
+                </div>
+                <input type="submit" id="submit3" value="Save"/>
 
-        <h3>Add calorie goal</h3>
-    <div class="form-group">
-        <label for="calorieGoal"></label>
-        <input
-                type="text"
-                class="form-control"
-                id="calorieGoal"
-                name="calorieGoal"
-                placeholder="Enter calorie goal">
-    </div>
-    <input type="submit" id="submit5" value="Save" />
-</form>
+                <h3>Add calorie goal</h3>
+                <div class="form-group">
+                    <label for="calorieGoal"></label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="calorieGoal"
+                            name="calorieGoal"
+                            placeholder="Enter calorie goal">
+                </div>
+                <input type="submit" id="submit5" value="Save"/>
+            </form>
 
-    </div>
+        </div>
     </div>
 {% endblock %}
 {% block scripts %}
     <!-- dropdown menu -->
     <script type=text/javascript>
-    document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
+        document.getElementById("navbarDarkDropdownMenuLink").onclick = function () {
+            myFunction()
+        };
 
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-}
-    <!-- dropdown menu -->
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        <!-- dropdown menu -->
     </script>
 {% endblock %}

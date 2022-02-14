@@ -12,73 +12,80 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-      {% if current_user.is_authenticated %}
-              <a class="navbar-brand" id="main" href="/">Happy Health</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" id="home" href="/">Home
-            <span class="visually-hidden">(current)</span>
-          </a>
-        </li>
-          <li class=nav-item">
-              <a class="nav-link" id="help_page1" href="/help-page">Help</a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" id="addData" href="/add-data">Add data</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="synchronize" href="/synchronize-page">Synchronize</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="diary" href="/diary">My diary</a>
-        </li>
-
-        <li class="nav-item dropdown" id="menu">
-          <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
-          <div class="dropdown-menu" id="myDropdown">
-            <a class="dropdown-item" id="accountSettings" href="/account-settings">Account settings</a>
-            <a class="dropdown-item" id="profilePreference" href="/profile-preference">Profile preferences</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" id="logout" href="/logout">Sign Out</a>
-          </div>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    {% else %}
-        <a class="navbar-brand" id="main" href="/main-page">Happy Health</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarColor02">
+    <div class="container-fluid">
+        {% if current_user.is_authenticated %}
+            <a class="navbar-brand" id="main" href="/">Happy Health</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+                    aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" id="home" href="/">Home
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+                <li class=nav-item">
+                    <a class="nav-link" id="help_page1" href="/help-page">Help</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="addData" href="/add-data">Add data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="synchronize" href="/synchronize-page">Synchronize</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="diary" href="/diary">My diary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="calendar" href="/calendar">My calendar</a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" id="signUp" href="/sign-up">Sign up</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" id="login" href="/login">Log in</a>
-            </li>
-
-            <li class=nav-item">
-                <a class="nav-link" id="help_page1" href="/help-page">Help</a>
-            </li>
+                <li class="nav-item dropdown" id="menu">
+                    <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" data-bs-toggle="dropdown"
+                       href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                    <div class="dropdown-menu" id="myDropdown">
+                        <a class="dropdown-item" id="accountSettings" href="/account-settings">Account settings</a>
+                        <a class="dropdown-item" id="profilePreference" href="/profile-preference">Profile
+                            preferences</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id="logout" href="/logout">Sign Out</a>
+                    </div>
+                </li>
             </ul>
+            <form class="d-flex">
+                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        {% else %}
+            <a class="navbar-brand" id="main" href="/main-page">Happy Health</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+                    aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="signUp" href="/sign-up">Sign up</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="login" href="/login">Log in</a>
+                    </li>
+
+                    <li class=nav-item">
+                        <a class="nav-link" id="help_page1" href="/help-page">Help</a>
+                    </li>
+                </ul>
+            </div>
+
+
+        {% endif %}
         </div>
-
-
-    {% endif %}
     </div>
-  </div>
 </nav>
 
 
@@ -114,12 +121,15 @@
 {% block scripts %}
     <!-- dropdown menu -->
     <script type=text/javascript>
-document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
+        document.getElementById("navbarDarkDropdownMenuLink").onclick = function () {
+            myFunction()
+        };
 
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-    <!-- dropdown menu -->
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        <!-- dropdown menu -->
     </script>
 {% endblock %}
 

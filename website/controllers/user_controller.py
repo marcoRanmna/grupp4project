@@ -1,4 +1,5 @@
 import datetime
+
 from passlib.hash import argon2
 from website.persistence.repository import user_repository
 from flask_login import login_user, current_user, logout_user
@@ -46,17 +47,20 @@ def add_data(date, steps, weight, calories_eaten, calories_burned, average_pulse
     data = {
         "user_id": current_user._id,
         "date": date,
-        "steps": steps,
-        "weight": weight,
-        "calories_eaten": calories_eaten,
-        "calories_burned": calories_burned,
-        "average_pulse": average_pulse
+        "data": {
+            "steps": steps,
+            "weight": weight,
+            "calories_eaten": calories_eaten,
+            "calories_burned": calories_burned,
+            "average_pulse": average_pulse
+        }
     }
     user_repository.add_data(data)
 
 
 def account_settings(first_name, last_name, email, bio):
     user = user_repository.get_user_by_id(current_user._id)
+    print(user)
     user.first_name = first_name
     user.last_name = last_name
     user.full_name = first_name + " " + last_name
@@ -75,6 +79,7 @@ def password_settings(old_password, new_password):
     user.save()
     logout_user()
     return True
+
 
 def get_user_by_email(email):
     return user_repository.get_user_by_email(email)
@@ -100,3 +105,12 @@ def verify_user(email, password):
 
 def get_user_data():
     return user_repository.get_user_by_id(current_user._id)
+
+
+def get_data_for_user_by_date(date):
+    data_user = user_repository.get_data_by_id(current_user._id)
+    data_for_date = []
+    for data in data_user:
+        if data.date == date:
+            data_for_date.append(data)
+    return data_for_date
