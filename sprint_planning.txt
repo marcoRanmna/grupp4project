@@ -18,3 +18,9 @@ Navbar for specified for logged in user.
 Add cards to home page.
 Add components for food and nutrients on website.
 Set calorie goal.
+
+Sprint-planning meeting 2022-02-14 10:05 name: finish the course
+Do Class diagram as we missed making one. One for start and one for how it's ending up.
+Finish calendar to database.
+Finish remaining cards to main-page.
+Add food and nutrients to database.

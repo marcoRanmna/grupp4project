@@ -1,46 +1,49 @@
-<html lang="en">
+{% extends "base.html" %}
+{% block content %}
+    <h1> Your Calendar</h1>
+    <form action="{{ url_for('bp_users.calendar_post') }}" method="POST">
+        <div class="form-group">
+            <label for="calendar">Enter date you want to see</label>
+            <input
+                    type="date"
+                    class="form-control"
+                    id="date"
+                    name="date"
+                    placeholder="Enter date">
+        </div>
+        <br/>
+        <input type="submit" id="submit" value="Show"/>
+    </form>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Date</th>
+            <th>Data</th>
+        </tr>
+        {% for data in data_user %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('bp_users.calendar_get', user_id=current_user) }}">{{ current_user.full_name }}</a>
+                </td>
+                <td>{{ data.date }}</td>
+                <td>{{ data.data }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
 
-<head>
-    <title>Calendar</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="../static/css/evo-calendar.min.css">
-    <link rel="stylesheet" href="../static/css/evo-calendar.midnight-blue.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-</head>
+{% block scripts %}
+    <!-- dropdown menu -->
+    <script type=text/javascript>
+        document.getElementById("navbarDarkDropdownMenuLink").onclick = function () {
+            myFunction()
+        };
 
-<body>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
+        <!-- dropdown menu -->
 
-<div class="hero">
-
-
-    <div id="calendar"></div>
-    <input type="hidden" id="data" value="{{ data }}">
-
-
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-<script src="../static/js/evo-calendar.min.js"></script>
-
-<script>
-
-    let data = JSON.parse(document.getElementById("data").value)
-    console.log(data)
-
-    $(document).ready(function () {
-        $('#calendar').evoCalendar({
-
-            calendarEvents: data
-        })
-    })
-
-</script>
-
-
-</body>
-
-</html>
+    </script>
+{% endblock %}

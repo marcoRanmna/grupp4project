@@ -1,9 +1,11 @@
 import datetime
-import random
 
 from passlib.hash import argon2
 from website.persistence.repository import user_repository
 from flask_login import login_user, current_user, logout_user
+
+from website.persistence.repository.user_repository import get_diary_note_by_id
+from website.persistence.repository.user_repository import get_user_by_id
 
 
 def create_user(first_name, last_name, email, password):
@@ -21,29 +23,44 @@ def create_user(first_name, last_name, email, password):
     user_repository.create_user(user)
 
 
-def add_data(date, steps, weight, calories_eaten, calories_burned, average_pulse):
-    # data = {
-    #     "user_id": current_user._id,
-    #     "date": date,
-    #     "steps": steps,
-    #     "weight": weight,
-    #     "calories_eaten": calories_eaten,
-    #     "calories_burned": calories_burned,
-    #     "average_pulse": average_pulse
-    # }
-    data = {
-        'id': random.randint(1, 9999),
+def add_diary_note(diary_note):
+    diary_entry = {
         'user_id': current_user._id,
-        'name': "Data",
-        'date': date,
-        'description': f"Steps:{steps}, Weight:{weight}, Calories-eaten:{calories_eaten}, "
-                       f"Calories-burned:{calories_burned}, Average-pulse:{average_pulse}"
+        'diary_note': diary_note,
+        'diary_created': datetime.datetime.now()
+    }
+
+    user_repository.add_diary_note(diary_entry)
+
+
+def get_all_diary_notes_for_user():
+    diary_entries = user_repository.get_all_diary_notes_for_user(current_user._id)
+    for diary_entry in diary_entries:
+        diary_entry.user_id = get_user_by_id(diary_entry.user_id)
+        diary_entry.diary_note
+        diary_entry.diary_created
+
+    return diary_entries
+
+
+def add_data(date, steps, weight, calories_eaten, calories_burned, average_pulse):
+    data = {
+        "user_id": current_user._id,
+        "date": date,
+        "data": {
+            "steps": steps,
+            "weight": weight,
+            "calories_eaten": calories_eaten,
+            "calories_burned": calories_burned,
+            "average_pulse": average_pulse
+        }
     }
     user_repository.add_data(data)
 
 
 def account_settings(first_name, last_name, email, bio):
     user = user_repository.get_user_by_id(current_user._id)
+    print(user)
     user.first_name = first_name
     user.last_name = last_name
     user.full_name = first_name + " " + last_name
@@ -90,6 +107,10 @@ def get_user_data():
     return user_repository.get_user_by_id(current_user._id)
 
 
-def get_data_for_user():
-    print(user_repository.get_data_by_id(current_user._id))
-    return user_repository.get_data_by_id(current_user._id)
+def get_data_for_user_by_date(date):
+    data_user = user_repository.get_data_by_id(current_user._id)
+    data_for_date = []
+    for data in data_user:
+        if data.date == date:
+            data_for_date.append(data)
+    return data_for_date

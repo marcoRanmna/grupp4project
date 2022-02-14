@@ -221,3 +221,38 @@ Present our work:
 - Emma and Marco: Continue on navbar also do routing, modify blueprints and redirects.
 - Oscar: continue account settings database issue and work on calendar if there is time
 - Alexander: Center things on website,
+
+2022-02-10 09:00
+Present during stand-up: Alexander, Oscar, Marco, Emma
+Present our work:
+- Emma % Marco: Finished redirect for logged in user and offline user, also started work on diary
+- Oscar: Account settings finished
+- Alexander: Finished center things, added more things to add data
+
+* Until Next time:
+- Emma and Marco: Continue with diary
+- Oscar: Make data appear in the calendar, in account settings try to get all boxes already filled in
+- Alexander: See weight progress
+
+2022-02-11 09:34
+Present during stand-up: Alexander, Marco, Emma, Oscar
+Present our work:
+- Emma and Marco: Had issues with the diary not working properly
+- Oscar: Finished with data appear in calendar and account settings
+- Alexander: added weight progress
+
+* Until next time:
+- Emma and Marco: Finnish work with diary
+- Oscar: Finnish work with calendar
+- Alexander: add rest of card to home-page and add foods to database
+
+2022-02-14 10:18
+Present during stand-up: Alexander, Marco, Emma, Oscar
+- Emma & Marco: diary is done and works
+- Oscar: not done with calendar and ran into issue. Marco helped a bit and they contacted Joakim.
+- Alexander: worked with Rgraph and switched to charts.
+
+* Until next time:
+- Alexander: finish with charts to home-page. Emma will help a bit
+- Emma: Do class diagram and help Alexander.
+- Oscar and Marco: Finish calendar by switching to similar to diary-solution.
