@@ -1,10 +1,15 @@
 from flask import Blueprint, render_template
+from website.controllers.user_controller import get_user_data
 
 views = Blueprint("views", __name__)
 
 
 @views.route("/")
 def home():
+    user_data = get_user_data()
+    if not user_data:
+        user_data = user_data.__dict__
+        user_data["_id"] = str(user_data["_id"])
     data = [
         ("13-02-2022", 1597),
         ("14-02-2022", 1456),
@@ -22,4 +27,4 @@ def home():
         labels.append(row[0])
         values.append(row[1])
 
-    return render_template("home.html", labels=labels, values=values)
+    return render_template("home.html", labels=user_data["date"], values=values)
