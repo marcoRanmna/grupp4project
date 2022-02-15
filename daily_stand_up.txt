@@ -258,7 +258,7 @@ Present during stand-up: Alexander, Marco, Emma, Oscar
 - Oscar and Marco: Finish calendar by switching to similar to diary-solution.
 
 2022-02-15 09:00
-Present during stand-up: Alexander, Emma, Oscar
+Present during stand-up: Alexander, Emma, Oscar, Marco is sick can not attend
 - Emma: Started working on class diagram
 - Oscar & Marco: Continued working on the new calendar
 - Alexander: Charts finished
