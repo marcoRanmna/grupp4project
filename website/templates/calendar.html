@@ -18,7 +18,16 @@
         <tr>
             <th>User</th>
             <th>Date</th>
-            <th>Data</th>
+            <th>Steps</th>
+            <th>Training time</th>
+            <th>Weight</th>
+            <th>Calories eaten</th>
+            <th>Calories burned</th>
+            <th>Average pulse</th>
+            <th>Highest pulse</th>
+            <th>Lowest pulse</th>
+            <th>Average stress-level</th>
+            <th>Average O2-levels</th>
         </tr>
         {% for data in data_user %}
             <tr>
@@ -26,7 +35,52 @@
                     <a href="{{ url_for('bp_users.calendar_get', user_id=current_user) }}">{{ current_user.full_name }}</a>
                 </td>
                 <td>{{ data.date }}</td>
-                <td>{{ data.data }}</td>
+                <td>{{ data.steps }}</td>
+                <td>{{ data.training_time }}</td>
+                <td>{{ data.weight }}</td>
+                <td>{{ data.calories_eaten }}</td>
+                <td>{{ data.calories_burned }}</td>
+                <td>{{ data.average_pulse }}</td>
+                <td>{{ data.highest_pulse }}</td>
+                <td>{{ data.lowest_pulse }}</td>
+                <td>{{ data.average_stress }}</td>
+                <td>{{ data.average_o2 }}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <th>User</th>
+            <th>Date</th>
+            <th>Training session</th>
+            <th>Average pulse</th>
+            <th>Duration</th>
+        </tr>
+        {% for training in training_user %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('bp_users.calendar_get', user_id=current_user) }}">{{ current_user.full_name }}</a>
+                </td>
+                <td>{{ training.date }}</td>
+                <td>{{ training.training_form }}</td>
+                <td>{{ training.average_pulse }}</td>
+                <td>{{ training.duration }}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <th>User</th>
+            <th>Date</th>
+            <th>Total sleep</th>
+            <th>Deep sleep</th>
+            <th>Light sleep</th>
+        </tr>
+        {% for sleep in sleep_user %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('bp_users.calendar_get', user_id=current_user) }}">{{ current_user.full_name }}</a>
+                </td>
+                <td>{{ sleep.date }}</td>
+                <td>{{ sleep.total_sleep }}</td>
+                <td>{{ sleep.deep_sleep }}</td>
+                <td>{{ sleep.light_sleep }}</td>
             </tr>
         {% endfor %}
     </table>

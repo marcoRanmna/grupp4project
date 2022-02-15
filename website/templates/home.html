@@ -1,99 +1,176 @@
 {% extends "base.html" %}
-         {% block content %}
-             <h1>This is the Main page for {{ current_user.full_name }}</h1>
-             <div class="row mx-md-n5">
-             <div class="col px-md-5">
-             <div class="card border-secondary mb-3" style="max-width: 20rem;">
-                 <h4 class="card-header">Daily calories</h4>
+{% block content %}
+    <h1>This is the Main page for {{ current_user.full_name }}</h1>
+    <div class="row mx-md-n5">
+        <div class="col px-md-5">
+            <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                <h4 class="card-header">Daily calories</h4>
                 <div class="card-body">
-            <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                             aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                     <div class="card-body">
-                    <p class="card-text">Your goal is: </p>
-                    <a href="/add-data" class="card-link">Add data</a>
-                    <a href="/synchronize" class="card-link">Synchronize</a>
+                        <p class="card-text">Your goal is: {{ user.calorie_goal }} </p>
+                        <a href="/add-data" class="card-link">Add data</a>
+                        <a href="/synchronize" class="card-link">Synchronize</a>
                     </div>
                 </div>
-                </div>
+            </div>
 
-             <div class="card border-secondary mb-3" style="max-width: 20rem;">
-                 <h4 class="card-header">Macros</h4>
-            <div class="card-body">
-            <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar bg-success" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar bg-info" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-                  <div class="card-body">
-                  <p class="card-text">Fats, carbohydrates and protein</p>
-                  </div>
-            </div>
+            <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                <h4 class="card-header">Macros</h4>
+                <div class="card-body">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15"
+                             aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 30%;" aria-valuenow="30"
+                             aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 20%;" aria-valuenow="20"
+                             aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Fats, carbohydrates and protein</p>
+                    </div>
+                </div>
             </div>
 
 
             <div class="card border-secondary mb-3" style="max-width: 20rem;">
-            <h4 class="card-header">Weight progress</h4>
-                    <div class="card-body">
-                    <p class="card-footer">Starting weight:  kg</p>
-                    <p class="card-footer">Current weight:  kg</p>
-                    <p class="card-footer">Goal weight:  kg</p>
-                    </div>
+                <h4 class="card-header">Weight progress</h4>
+                <div class="card-body">
+                    <p class="card-footer">Starting weight: {{ user.start_weight }} kg</p>
+                    <p class="card-footer">Current weight: {{ user.current_weight }} kg</p>
+                    <p class="card-footer">Goal weight: {{ user.goal_weight }} kg</p>
+                </div>
             </div>
-            </div>
+        </div>
 
-            <div class="col px-md-5">
+        <div class="col px-md-5">
             <div class="card border-secondary mb-3" style="max-width: 20rem;">
-            <h4 class="card-header">Sleep length</h4>
-                    <div class="card-body">
-                    <p class="card-footer">Daily sleep session:  </p>
-                    <p class="card-footer">Average sleep session:  </p>
-                    <p class="card-footer">Deep sleep:  </p>
-                    <p class="card-footer">Light sleep:  </p>
-                    </div>
+                <h4 class="card-header">Last sleep length</h4>
+                <div class="card-body">
+                    <p class="card-footer">Date of sleep: {{ sleep.date }} </p>
+                    <p class="card-footer">Sleep session: {{ sleep.total_sleep }} </p>
+                    <p class="card-footer">Deep sleep: {{ sleep.deep_sleep }} </p>
+                    <p class="card-footer">Light sleep: {{ sleep.light_sleep }} </p>
+                </div>
             </div>
-             <div class="card border-secondary" style="max-width: 20rem;">
-                 <h4 class="card-header">Training</h4>
+            <div class="card border-secondary" style="max-width: 20rem;">
+                <h4 class="card-header">Last training session</h4>
                 <div class="card-body">
-                <p class="card-footer">Training sessions:  </p>
-                <p class="card-footer">Duration:  </p>
-                <p class="card-footer">Average pulse:  </p>
+                    <p class="card-footer">Training date: {{ training.date }} </p>
+                    <p class="card-footer">Training form: {{ training.training_form }} </p>
+                    <p class="card-footer">Duration: {{ training.duration }} min</p>
+                    <p class="card-footer">Average pulse: {{ training.average_pulse }} </p>
                 </div>
-                </div>
-             </div>
-             <div class="col px-md-5">
-             <div class="card border-secondary mb-3" style="max-width: 20rem;">
-                 <div class="card-header">Sleep</div>
+            </div>
+        </div>
+        <div class="col px-md-5">
+            <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Pulse</div>
                 <div class="card-body">
-                <h4 class="card-title">Test card</h4>
-                <p class="card-text">We care about health which is why we want you to feel bad if you aren't taking good care about your health</p>
+                    <canvas id="lineChart3" width="300" height="140"></canvas>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+                    <script>
+                        var ctx = document.getElementById("lineChart3").getContext("2d");
+                        var lineChart3 = new Chart(ctx, {
+                            type: "line",
+                            data: {
+                                labels: {{ date | safe }},
+                                datasets: [
+                                    {
+                                        label: "Data points",
+                                        data: {{ pulse | safe }},
+                                        fill: false,
+                                        borderColor: "rgb(75, 192, 192)",
+                                        lineTension: 0.5
+
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: false
+                            }
+
+                        });
+                    </script>
                 </div>
+            </div>
+            <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Stress</div>
+                <div class="card-body">
+                    <canvas id="lineChart2" width="300" height="140"></canvas>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+                    <script>
+                        var ctx = document.getElementById("lineChart2").getContext("2d");
+                        var lineChart2 = new Chart(ctx, {
+                            type: "line",
+                            data: {
+                                labels: {{ date | safe }},
+                                datasets: [
+                                    {
+                                        label: "Data points",
+                                        data: {{ stress | safe }},
+                                        fill: true,
+                                        borderColor: "rgb(75, 192, 192)",
+                                        lineTension: 0.5
+
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: false
+                            }
+
+                        });
+                    </script>
                 </div>
-             <div class="card border-secondary mb-3" style="max-width: 20rem;">
-                 <div class="card-header">Stress</div>
+            </div>
+            <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                <div class="card-header">02-levels</div>
                 <div class="card-body">
-                <h4 class="card-title">Test card</h4>
-                <p class="card-text">We care about health which is why we want you to feel bad if you aren't taking good care about your health</p>
-             </div>
-             </div>
-             <div class="card border-secondary mb-3" style="max-width: 20rem;">
-                 <div class="card-header">02-levels</div>
-                <div class="card-body">
-                <h4 class="card-title">Test card</h4>
-                <p class="card-text">We care about health which is why we want you to feel bad if you aren't taking good care about your health</p>
-             </div>
-             </div>
-             </div>
-             </div>
-         {% endblock %}
+                    <canvas id="lineChart" width="300" height="140"></canvas>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+                    <script>
+                        var ctx = document.getElementById("lineChart").getContext("2d");
+                        var lineChart = new Chart(ctx, {
+                            type: "line",
+                            data: {
+                                labels: {{ date | safe }},
+                                datasets: [
+                                    {
+                                        label: "Data points",
+                                        data: {{ o2 | safe }},
+                                        fill: true,
+                                        borderColor: "rgb(75, 192, 192)",
+                                        lineTension: 0.5
+
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: false
+                            }
+
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 {% block scripts %}
     <!-- dropdown menu -->
     <script type=text/javascript>
-    document.getElementById("navbarDarkDropdownMenuLink").onclick = function() {myFunction()};
+        document.getElementById("navbarDarkDropdownMenuLink").onclick = function () {
+            myFunction()
+        };
 
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-}
-    <!-- dropdown menu -->
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        <!-- dropdown menu -->
     </script>
 {% endblock %}

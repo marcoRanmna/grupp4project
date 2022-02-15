@@ -20,10 +20,9 @@ def login_post():
             return redirect(url_for("bp_open.login"))
         signin_user(email)
         user_id = str(current_user._id).encode('utf-8')
-        resp = make_response(redirect(url_for('views.home')))
+        resp = make_response(redirect(url_for('bp_users.home')))
         resp.set_cookie('user_id', user_id)
         return resp
-        #return redirect(url_for("bp.open.signup_get"))
 
 
 @bp_open.route("/sign-up", methods=["GET"])
@@ -60,23 +59,11 @@ def sign_up():
         return redirect(url_for("bp_open.login"))
 
 
-# @bp_open.route('/login')
-# def signin_post():
-#     email = request.form.get('email')
-#     print('hello')
-#     signin_user(email)
-    # password = request.form.get('password')
-    # from website.persistence.models import User
-    # user = User.find(email=email).first_or_none()
-    # if user is None:
-    #     flash('Error signing in. Check your email and password!')
-    #     return redirect(url_for('bp_open.signin_get'))
-    #
-    # elif password != user.password:
-    #     flash('Error signing in. Check your email and password!')
-    #     return redirect(url_for('bp_open.signin_get'))
+@bp_open.route("/help-page", methods=["GET"])
+def help():
+    return render_template("help.html")
 
-    # login_user(user)
-    # user.last_signin = datetime.datetime.now()
-    # user.save()
-    # return redirect(url_for('bp_open.sign_up'))
+
+@bp_open.route("/main-page")
+def main():
+    return render_template("main.html")

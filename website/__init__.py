@@ -18,24 +18,10 @@ def create_app():
         from website.controllers.user_controller import get_user_by_email
         return get_user_by_email(user_email)
 
-    from .views import views
     from website.blueprints.open import bp_open
-    from .mainpage import main_page
-    from .synchronize import synchronize_page
-    #from .adddata import add_data
-    #from .accountsettings import account_settings
-    from .profilepreference import profile_preference1
-    from .help_page import help_page1
     from website.blueprints.users import bp_users
 
-    app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(bp_open, url_prefix="/")
     app.register_blueprint(bp_users, url_prefix="/")
-    app.register_blueprint(main_page, url_perfix="/")
-    app.register_blueprint(synchronize_page, url_perfix="/")
-    #app.register_blueprint(add_data, url_prefix="/")
-    #app.register_blueprint(account_settings, url_prefix="/")
-    app.register_blueprint(profile_preference1, url_prefix="/")
-    app.register_blueprint(help_page1, url_prefix="/")
 
     return app
