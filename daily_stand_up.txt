@@ -256,3 +256,13 @@ Present during stand-up: Alexander, Marco, Emma, Oscar
 - Alexander: finish with charts to home-page. Emma will help a bit
 - Emma: Do class diagram and help Alexander.
 - Oscar and Marco: Finish calendar by switching to similar to diary-solution.
+
+2022-02-15 09:00
+Present during stand-up: Alexander, Emma, Oscar
+- Emma: Started working on class diagram
+- Oscar & Marco: Continued working on the new calendar
+- Alexander: Charts finished
+
+* Until next time:
+- Alexander & Oscar: Connection home page to database
+- Emma: Finish class diagram
