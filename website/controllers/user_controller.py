@@ -4,9 +4,6 @@ from passlib.hash import argon2
 from website.persistence.repository import user_repository
 from flask_login import login_user, current_user, logout_user
 
-from website.persistence.repository.user_repository import get_diary_note_by_id
-from website.persistence.repository.user_repository import get_user_by_id
-
 
 def create_user(first_name, last_name, email, password):
     user = {
@@ -36,7 +33,7 @@ def add_diary_note(diary_note):
 def get_all_diary_notes_for_user():
     diary_entries = user_repository.get_all_diary_notes_for_user(current_user._id)
     for diary_entry in diary_entries:
-        diary_entry.user_id = get_user_by_id(diary_entry.user_id)
+        diary_entry.user_id = user_repository.get_user_by_id(diary_entry.user_id)
         diary_entry.diary_note
         diary_entry.diary_created
 
@@ -47,13 +44,11 @@ def add_data(date, steps, weight, calories_eaten, calories_burned, average_pulse
     data = {
         "user_id": current_user._id,
         "date": date,
-        "data": {
-            "steps": steps,
-            "weight": weight,
-            "calories_eaten": calories_eaten,
-            "calories_burned": calories_burned,
-            "average_pulse": average_pulse
-        }
+        "steps": steps,
+        "weight": weight,
+        "calories_eaten": calories_eaten,
+        "calories_burned": calories_burned,
+        "average_pulse": average_pulse
     }
     user_repository.add_data(data)
 
