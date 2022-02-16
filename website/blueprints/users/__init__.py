@@ -12,7 +12,7 @@ bp_users = Blueprint("bp_users", __name__)
 @bp_users.before_request
 def before_request():
     if not current_user.is_authenticated:
-        return redirect(url_for('main.main'))
+        return redirect(url_for('bp_open.main'))
 
 
 @bp_users.route("/logout", methods=["GET"])
@@ -117,8 +117,6 @@ def calendar_post():
     data_user = get_data_for_user_by_date(date)
     training_user = get_training_for_user_by_date(date)
     sleep_user = get_sleep_for_user_by_date(date)
-    # if not data_user:
-    #     flash("No data for that day")
     return render_template("calendar.html", data_user=data_user, training_user=training_user, sleep_user=sleep_user)
 
 

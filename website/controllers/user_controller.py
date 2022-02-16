@@ -37,8 +37,6 @@ def get_all_diary_notes_for_user():
     diary_entries = user_repository.get_all_diary_notes_for_user(current_user._id)
     for diary_entry in diary_entries:
         diary_entry.user_id = user_repository.get_user_by_id(diary_entry.user_id)
-        diary_entry.diary_note
-        diary_entry.diary_created
 
     return diary_entries
 
@@ -67,7 +65,7 @@ def add_training(date, training_form, average_pulse, duration):
         "date": date,
         "training_form": training_form,
         "average_pulse": average_pulse,
-        "duration": duration + "min"
+        "duration": duration
     }
     user_repository.add_training(training)
 
@@ -85,7 +83,6 @@ def add_sleep(date, total_sleep, deep_sleep, light_sleep):
 
 def account_settings(first_name, last_name, email, bio):
     user = user_repository.get_user_by_id(current_user._id)
-    print(user)
     user.first_name = first_name
     user.last_name = last_name
     user.full_name = first_name + " " + last_name
@@ -106,7 +103,6 @@ def weight_progress(goal_weight, start_weight, current_weight, calorie_goal):
 
 def password_settings(old_password, new_password):
     if not verify_user(current_user.email, old_password):
-        print(current_user)
         return False
     user = user_repository.get_user_by_email(current_user.email)
     user.password = argon2.using(rounds=12).hash(new_password)
@@ -132,7 +128,6 @@ def signin_user(email):
 def verify_user(email, password):
     user = user_repository.get_user_by_email(email)
     if user is None:
-        print("wrong email")
         return False
     return argon2.verify(password, user.password)
 

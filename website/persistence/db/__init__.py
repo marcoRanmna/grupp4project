@@ -3,7 +3,7 @@ from abc import ABC
 
 client = MongoClient(f'mongodb://root:ff979eb04bc8f50f8e7b78abf1384dd0a12a3ff87e8bdcf373bedac19603bbcd@localhost:27020')
 db = client.users
-# ff979eb04bc8f50f8e7b78abf1384dd0a12a3ff87e8bdcf373bedac19603bbcd
+
 
 def init_db(app):
 
