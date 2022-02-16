@@ -23,3 +23,11 @@ class Data(Document):
 
 class Diary(Document):
     collection = db.dairy
+
+
+class Training(Document):
+    collection = db.training
+
+
+class Sleep(Document):
+    collection = db.sleep

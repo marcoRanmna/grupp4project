@@ -1,4 +1,4 @@
-from website.persistence.models import User, Data
+from website.persistence.models import User, Data, Training, Sleep
 
 
 def get_user_by_id(user_id):
@@ -7,6 +7,14 @@ def get_user_by_id(user_id):
 
 def get_data_by_id(user_id):
     return Data.find(user_id=user_id)
+
+
+def get_training_data_by_id(user_id):
+    return Training.find(user_id=user_id)
+
+
+def get_sleep_data_by_id(user_id):
+    return Sleep.find(user_id=user_id)
 
 
 def create_user(user):
@@ -32,5 +40,21 @@ def add_data(data):
     Data(data).save()
 
 
+def add_training(training):
+    Training(training).save()
+
+
+def add_sleep(sleep):
+    Sleep(sleep).save()
+
+
 def get_user_by_email(email):
     return User.find(email=email).first_or_none()
+
+
+def get_last_training_data_by_id(user_id):
+    return Training.find(user_id=user_id).last_or_none()
+
+
+def get_last_sleep_data_by_id(user_id):
+    return Sleep.find(user_id=user_id).last_or_none()

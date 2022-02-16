@@ -122,36 +122,36 @@
             <form method="POST">
                 <h3>Add training session</h3>
                 <div class="form-group">
-                    <label for="date">Date for data</label>
+                    <label for="trainingDate">Date for training session</label>
                     <input
                             type="date"
                             class="form-control"
-                            id="date"
-                            name="date"
-                            placeholder="Enter date for data (mm/dd/yyyy-hh:mm)">
+                            id="trainingDate"
+                            name="trainingDate"
+                            placeholder="Enter date for training (mm/dd/yyyy-hh:mm)">
                 </div>
                 <div class="form-group">
-                    <label for="training-session">training session</label>
+                    <label for="trainingSession">Training session</label>
                     <input
                             type="text"
                             class="form-control"
-                            id="training-session"
-                            name="training-session"
+                            id="trainingSession"
+                            name="trainingSession"
                             placeholder="Enter form of exercise">
                 </div>
                 <div class="form-group">
-                    <label for="averagePulse">Average pulse</label>
+                    <label for="trainingPulse">Average pulse</label>
                     <input
                             type="number"
                             class="form-control"
-                            id="averagePulse"
-                            name="averagePulse"
+                            id="trainingPulse"
+                            name="trainingPulse"
                             placeholder="Enter average pulse">
                 </div>
                 <div class="form-group">
-                    <label for="duration">duration</label>
+                    <label for="duration">Duration in minutes</label>
                     <input
-                            type="text"
+                            type="number"
                             class="form-control"
                             id="duration"
                             name="duration"
@@ -177,16 +177,16 @@
             <form method="POST">
                 <h3>Add sleep</h3>
                 <div class="form-group">
-                    <label for="date">Date for data</label>
+                    <label for="sleepDate">Date for sleep</label>
                     <input
                             type="date"
                             class="form-control"
-                            id="date"
-                            name="date"
+                            id="sleepDate"
+                            name="sleepDate"
                             placeholder="Enter date for data (mm/dd/yyyy-hh:mm)">
                 </div>
                 <div class="form-group">
-                    <label for="totalSleep">total sleep amount</label>
+                    <label for="totalSleep">Total sleep amount</label>
                     <input
                             type="text"
                             class="form-control"
@@ -195,7 +195,7 @@
                             placeholder="total amount of sleep">
                 </div>
                 <div class="form-group">
-                    <label for="deepSleep">deep sleep</label>
+                    <label for="deepSleep">Deep sleep</label>
                     <input
                             type="text"
                             class="form-control"
@@ -213,16 +213,48 @@
                             placeholder="Enter amount of light sleep">
                 </div>
                 <input type="submit" id="submit3" value="Save"/>
-
-                <h3>Add calorie goal</h3>
+            </form>
+            <form method="POST">
+                <h3>Weight progress</h3>
                 <div class="form-group">
-                    <label for="calorieGoal"></label>
+                    <label for="calorieGoal">Calorie goal</label>
                     <input
                             type="text"
                             class="form-control"
                             id="calorieGoal"
                             name="calorieGoal"
-                            placeholder="Enter calorie goal">
+                            placeholder="Enter calorie goal"
+                            value="{{ user.calorie_goal }}">
+                </div>
+                <div class="form-group">
+                    <label for="weightGoal">Weight goal</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="weightGoal"
+                            name="weightGoal"
+                            placeholder="Enter weight goal"
+                            value="{{ user.goal_weight }}">
+                </div>
+                <div class="form-group">
+                    <label for="startWeight">Start Weight</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="startWeight"
+                            name="startWeight"
+                            placeholder="Enter start weight"
+                            value="{{ user.start_weight }}">
+                </div>
+                <div class="form-group">
+                    <label for="currentWeight">Current weight</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="currentWeight"
+                            name="currentWeight"
+                            placeholder="Enter current weight"
+                            value="{{ user.current_weight }}">
                 </div>
                 <input type="submit" id="submit5" value="Save"/>
             </form>
